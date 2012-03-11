@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding='ISO-8859-1'?>
-<visualdsp-project-group generated="Sun Feb 21 23:13:35 2010" version="1.0.0.0" active-project="kzsdk">
+<visualdsp-project-group generated="Sun Mar 11 09:58:13 2012" version="1.0.0.0" active-project="kzsdk">
 	<project name="makeoffset" file="..\jsp\utils\blackfin-vdsp\makeoffset.dpj">
 	</project>
 	<project name="libkernel" file="..\jsp\config\blackfin\kobanzame\jsp_kobanzame.dpj">
