@@ -1,0 +1,1743 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- ************************************************************************ -->
+<!-- ******* ADSP-BF533-proc.xml                                              -->
+<!-- ******* Common definition file for registers, windows and memory         -->
+<!-- ******* Uppermost elements:                                              -->
+<!-- ******* 	<register-core-definitions>                                   -->
+<!-- ******* 	<register-extended-definitions>                               -->
+<!-- ******* 	<register-reset-definitions>                                  -->
+<!-- ******* 	<format-definitions>                                          -->
+<!-- ******* 	<register-window-definitions>                                 -->
+<!-- ******* 	<memory-window-definitions>                                   -->
+<!-- ******* 	<memory-definitions>                                          -->
+<!-- ******* Copyright 2004-2008 Analog Devices, Inc.  All rights reserved.   -->
+<!-- ************************************************************************ -->
+
+<visualdsp-proc-xml schema-version="1" name="ADSP-BF533-proc.xml">
+
+<version file-version="2.16"/>
+
+<!-- ************************************************************************ -->
+<!-- ******* Register set                                                     -->
+<!-- ************************************************************************ -->
+
+	<!-- *********************************************** -->
+	<!-- Where to obtain the <register-core-definitions> -->
+	<!-- *********************************************** -->
+<register-core-file name="ADSP-EDN-core.xml" prefix="EDN"/>
+
+<register-extended-file name="ADSP-EDN-extended.xml"/>
+
+<!-- ************************************************************************ -->
+<!-- ******* Grouping of formats that are applied to register windows         -->
+<!-- ************************************************************************ -->
+
+<format-definitions>
+
+<!-- All is every data format (numeric and character), but no disassembly -->
+<format-grouping name="All">
+	<format option="Hexadecimal"/>
+	<format option="Binary"/>
+	<format option="Octal"/>
+	<format option="Signed Integer"/>
+	<format option="Unsigned Integer"/>
+	<format option="Floating Point 32 bit"/>
+	<format option="Signed Fractional"/>
+	<format option="Unsigned Fractional"/>
+	<format option="Signed Integer 32 bit"/>
+	<format option="Signed Integer 16 bit"/>
+	<format option="Unsigned Integer 32 bit"/>
+	<format option="Unsigned Integer 16 bit"/>
+	<format option="Signed Fractional 32 bit"/>
+	<format option="Signed Fractional 16 bit"/>
+	<format option="Unsigned Fractional 32 bit"/>
+	<format option="Unsigned Fractional 16 bit"/>
+	<format option="Hex32"/>
+	<format option="Hex16"/>
+	<format option="Hex8"/>
+	<format option="Binary 32 bit"/>
+	<format option="Binary 16 bit"/>
+	<format option="Binary 8 bit"/>
+	<format option="Character"/>
+</format-grouping>
+</format-definitions>
+
+<!-- ************************************************************************ -->
+<!-- ******* Register Windows                                                 -->
+<!-- ************************************************************************ -->
+
+<register-window-definitions help-chm="\procfrio.chm::/html/">
+<window name="System Configuration" menu="&amp;Register:&amp;Core:System Configuration" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x9" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_REG_SYSCFG.html">
+	<register name="System Configuration Register" type="NODATA" x="0" y="0"/>
+	<register name="SYSCFG" type="NODATA" x="0" y="1"/>
+	<register name="SYSCFG" type="NOLABEL" x="8" y="1"/>
+	<register name="SSSTEP Supervisor Single Step" type="NODATA" x="3" y="2"/>
+	<register name="SSSTEP" type="NOLABEL" x="40" y="2"/>
+	<register name="CCEN   Cycle Counter Enable" type="NODATA" x="3" y="3"/>
+	<register name="CCEN" type="NOLABEL" x="40" y="3"/>
+	<register name="SNEN   Self-Nesting Interrupt Enable" type="NODATA" x="3" y="4"/>
+	<register name="SNEN" type="NOLABEL" x="40" y="4"/>
+	<register name="Software Reset Register" type="NODATA" x="0" y="6"/>
+	<register name="SWRST" type="NODATA" x="0" y="7"/>
+	<register name="SWRST" type="NOLABEL" x="8" y="7"/>
+	<register name="System Reset Configuration Register" type="NODATA" x="0" y="9"/>
+	<register name="SYSCR" type="NODATA" x="0" y="10"/>
+	<register name="SYSCR" type="NOLABEL" x="8" y="10"/>
+</window>
+<window name="Stack/Frame Pointers" menu="&amp;Register:&amp;Core:Stack/Frame Pointers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0xA" help-tag="\BF533-HWR.chm::/EHR_05_data_addressing3.html">
+	<register name="SP" type="NORMAL" x="5" y="0"/>
+	<register name="USP" type="NORMAL" x="5" y="1"/>
+	<register name="FP" type="NORMAL" x="5" y="2"/>
+</window>
+<window name="Sequencer" menu="&amp;Register:&amp;Core:Sequencer" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x7" help-tag="\BF533-HWR.chm::/EHR_04_program_sequencer2.html">
+	<register name="RETS" type="NORMAL" x="5" y="0"/>
+	<register name="RETI" type="NORMAL" x="5" y="1"/>
+	<register name="RETX" type="NORMAL" x="5" y="2"/>
+	<register name="RETE" type="NORMAL" x="5" y="3"/>
+	<register name="RETN" type="NORMAL" x="5" y="4"/>
+</window>
+<window name="P Registers" menu="&amp;Register:&amp;Core:P Registers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0xB" help-tag="\BF533-HWR.chm::/EHR_02_comp_units10.html">
+	<register name="P0" type="NORMAL" x="5" y="0"/>
+	<register name="P1" type="NORMAL" x="5" y="1"/>
+	<register name="P2" type="NORMAL" x="5" y="2"/>
+	<register name="P3" type="NORMAL" x="5" y="3"/>
+	<register name="P4" type="NORMAL" x="5" y="4"/>
+	<register name="P5" type="NORMAL" x="5" y="5"/>
+</window>
+<window name="Interrupt Controller" menu="&amp;Register:&amp;Core:Interrupt Controller" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x6" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_IMEM_CONTROL_REGISTER_LIST.html">
+
+	<register name="IPRIO" type="NORMAL" x="20" y="0"/>
+		
+	<register name="0 = EMU"     type="NODATA" x="1" y="5"/>
+	<register name="1 = RST"     type="NODATA" x="1" y="6"/>
+	<register name="2 = NMI"     type="NODATA" x="1" y="7"/>
+	<register name="3 = EVX"     type="NODATA" x="1" y="8"/>
+	<register name="4 = GBLDIS"  type="NODATA" x="1" y="9"/>
+	<register name="5 = IVHW"    type="NODATA" x="1" y="10"/>
+	<register name="6 = IVTMR"   type="NODATA" x="1" y="11"/>
+	<register name="7 = IVG7"    type="NODATA" x="1" y="12"/>
+	<register name="8 = IVG8"    type="NODATA" x="1" y="13"/>
+	<register name="9 = IVG9"    type="NODATA" x="1" y="14"/>
+	<register name="10 = IVG10"  type="NODATA" x="0" y="15"/>
+	<register name="11 = IVG11"  type="NODATA" x="0" y="16"/>
+	<register name="12 = IVG12"  type="NODATA" x="0" y="17"/>
+	<register name="13 = IVG13"  type="NODATA" x="0" y="18"/>
+	<register name="14 = IVG14"  type="NODATA" x="0" y="19"/>
+	<register name="15 = IVG15"  type="NODATA" x="0" y="20"/>
+		
+	<register name="ILAT"      type="NODATA"  x="14" y="2"/>
+	<register name="ILAT"      type="NOLABEL" x="12"  y="3"/>
+	<register name="ILATbit0"  type="NOLABEL" x="16" y="5"/>
+	<register name="ILATbit1"  type="NOLABEL" x="16" y="6"/>
+	<register name="ILATbit2"  type="NOLABEL" x="16" y="7"/>
+	<register name="ILATbit3"  type="NOLABEL" x="16" y="8"/>
+	<register name="[unused]"  type="NODATA"  x="13" y="9"/>	
+	<register name="ILATbit5"  type="NOLABEL" x="16" y="10"/>	
+	<register name="ILATbit6"  type="NOLABEL" x="16" y="11"/>
+	<register name="ILATbit7"  type="NOLABEL" x="16" y="12"/>
+	<register name="ILATbit8"  type="NOLABEL" x="16" y="13"/>
+	<register name="ILATbit9"  type="NOLABEL" x="16" y="14"/>
+	<register name="ILATbit10" type="NOLABEL" x="16" y="15"/>
+	<register name="ILATbit11" type="NOLABEL" x="16" y="16"/>
+	<register name="ILATbit12" type="NOLABEL" x="16" y="17"/>
+	<register name="ILATbit13" type="NOLABEL" x="16" y="18"/>
+	<register name="ILATbit14" type="NOLABEL" x="16" y="19"/>
+	<register name="ILATbit15" type="NOLABEL" x="16" y="20"/>
+	
+	<register name="IMASK"      type="NODATA"  x="24" y="2"/>
+	<register name="IMASK"      type="NOLABEL" x="23" y="3"/>
+	<register name="IMASKbit0"  type="NOLABEL" x="26" y="5"/>
+	<register name="IMASKbit1"  type="NOLABEL" x="26" y="6"/>
+	<register name="IMASKbit2"  type="NOLABEL" x="26" y="7"/>
+	<register name="IMASKbit3"  type="NOLABEL" x="26" y="8"/>
+	<register name="IMASKbit4"  type="NOLABEL" x="26" y="9"/>	
+	<register name="IMASKbit5"  type="NOLABEL" x="26" y="10"/>	
+	<register name="IMASKbit6"  type="NOLABEL" x="26" y="11"/>
+	<register name="IMASKbit7"  type="NOLABEL" x="26" y="12"/>
+	<register name="IMASKbit8"  type="NOLABEL" x="26" y="13"/>
+	<register name="IMASKbit9"  type="NOLABEL" x="26" y="14"/>
+	<register name="IMASKbit10" type="NOLABEL" x="26" y="15"/>
+	<register name="IMASKbit11" type="NOLABEL" x="26" y="16"/>
+	<register name="IMASKbit12" type="NOLABEL" x="26" y="17"/>
+	<register name="IMASKbit13" type="NOLABEL" x="26" y="18"/>
+	<register name="IMASKbit14" type="NOLABEL" x="26" y="19"/>
+	<register name="IMASKbit15" type="NOLABEL" x="26" y="20"/>
+	
+	<register name="IPEND"      type="NODATA"  x="34" y="2"/>
+	<register name="IPEND"      type="NOLABEL" x="33" y="3"/>
+	<register name="IPENDbit0"  type="NOLABEL" x="36" y="5"/>
+	<register name="IPENDbit1"  type="NOLABEL" x="36" y="6"/>
+	<register name="IPENDbit2"  type="NOLABEL" x="36" y="7"/>
+	<register name="IPENDbit3"  type="NOLABEL" x="36" y="8"/>
+	<register name="IPENDbit4"  type="NOLABEL" x="36" y="9"/>
+	<register name="IPENDbit5"  type="NOLABEL" x="36" y="10"/>	
+	<register name="IPENDbit6"  type="NOLABEL" x="36" y="11"/>
+	<register name="IPENDbit7"  type="NOLABEL" x="36" y="12"/>
+	<register name="IPENDbit8"  type="NOLABEL" x="36" y="13"/>
+	<register name="IPENDbit9"  type="NOLABEL" x="36" y="14"/>
+	<register name="IPENDbit10" type="NOLABEL" x="36" y="15"/>
+	<register name="IPENDbit11" type="NOLABEL" x="36" y="16"/>
+	<register name="IPENDbit12" type="NOLABEL" x="36" y="17"/>
+	<register name="IPENDbit13" type="NOLABEL" x="36" y="18"/>
+	<register name="IPENDbit14" type="NOLABEL" x="36" y="19"/>
+	<register name="IPENDbit15" type="NOLABEL" x="36" y="20"/>
+</window>
+<window name="Data Register File" menu="&amp;Register:&amp;Core:Data Register File" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0xD" help-tag="\BF533-HWR.chm::/EHR_02_comp_units11.html">
+	<register name="Whole" type="NODATA" x="5" y="0"/>
+	<register name="High" type="NODATA" x="20" y="0"/>
+	<register name="Low" type="NODATA" x="30" y="0"/>
+	<register name="Byte" type="NODATA" x="40" y="0"/>
+	<register name="R0" type="NORMAL" x="5" y="1"/>
+	<register name="R1" type="NORMAL" x="5" y="2"/>
+	<register name="R2" type="NORMAL" x="5" y="3"/>
+	<register name="R3" type="NORMAL" x="5" y="4"/>
+	<register name="R4" type="NORMAL" x="5" y="5"/>
+	<register name="R5" type="NORMAL" x="5" y="6"/>
+	<register name="R6" type="NORMAL" x="5" y="7"/>
+	<register name="R7" type="NORMAL" x="5" y="8"/>
+	<register name="R0.H" type="NOLABEL" x="20" y="1"/>
+	<register name="R1.H" type="NOLABEL" x="20" y="2"/>
+	<register name="R2.H" type="NOLABEL" x="20" y="3"/>
+	<register name="R3.H" type="NOLABEL" x="20" y="4"/>
+	<register name="R4.H" type="NOLABEL" x="20" y="5"/>
+	<register name="R5.H" type="NOLABEL" x="20" y="6"/>
+	<register name="R6.H" type="NOLABEL" x="20" y="7"/>
+	<register name="R7.H" type="NOLABEL" x="20" y="8"/>
+	<register name="R0.L" type="NOLABEL" x="30" y="1"/>
+	<register name="R1.L" type="NOLABEL" x="30" y="2"/>
+	<register name="R2.L" type="NOLABEL" x="30" y="3"/>
+	<register name="R3.L" type="NOLABEL" x="30" y="4"/>
+	<register name="R4.L" type="NOLABEL" x="30" y="5"/>
+	<register name="R5.L" type="NOLABEL" x="30" y="6"/>
+	<register name="R6.L" type="NOLABEL" x="30" y="7"/>
+	<register name="R7.L" type="NOLABEL" x="30" y="8"/>
+	<register name="R0.B" type="NOLABEL" x="40" y="1"/>
+	<register name="R1.B" type="NOLABEL" x="40" y="2"/>
+	<register name="R2.B" type="NOLABEL" x="40" y="3"/>
+	<register name="R3.B" type="NOLABEL" x="40" y="4"/>
+	<register name="R4.B" type="NOLABEL" x="40" y="5"/>
+	<register name="R5.B" type="NOLABEL" x="40" y="6"/>
+	<register name="R6.B" type="NOLABEL" x="40" y="7"/>
+	<register name="R7.B" type="NOLABEL" x="40" y="8"/>
+</window>
+<window name="DAG Registers" menu="&amp;Register:&amp;Core:DAG Registers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0xC" help-tag="\BF533-HWR.chm::/EHR_02_comp_units11.html">
+	<register name="I Regs" type="NODATA" x="5" y="0"/>
+	<register name="M Regs" type="NODATA" x="17" y="0"/>
+	<register name="L Regs" type="NODATA" x="29" y="0"/>
+	<register name="B Regs" type="NODATA" x="41" y="0"/>
+	<register name="I0" type="NORMAL" x="5" y="1"/>
+	<register name="I1" type="NORMAL" x="5" y="2"/>
+	<register name="I2" type="NORMAL" x="5" y="3"/>
+	<register name="I3" type="NORMAL" x="5" y="4"/>
+	<register name="M0" type="NORMAL" x="17" y="1"/>
+	<register name="M1" type="NORMAL" x="17" y="2"/>
+	<register name="M2" type="NORMAL" x="17" y="3"/>
+	<register name="M3" type="NORMAL" x="17" y="4"/>
+	<register name="L0" type="NORMAL" x="29" y="1"/>
+	<register name="L1" type="NORMAL" x="29" y="2"/>
+	<register name="L2" type="NORMAL" x="29" y="3"/>
+	<register name="L3" type="NORMAL" x="29" y="4"/>
+	<register name="B0" type="NORMAL" x="41" y="1"/>
+	<register name="B1" type="NORMAL" x="41" y="2"/>
+	<register name="B2" type="NORMAL" x="41" y="3"/>
+	<register name="B3" type="NORMAL" x="41" y="4"/>
+</window>
+<window name="Accumulators" menu="&amp;Register:&amp;Core:Accumulators" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x18" help-tag="HID_Accumulators.htm">
+	<register name="A0" type="NORMAL" x="5" y="0"/>
+	<register name="A0.W" type="NORMAL" x="5" y="1"/>
+	<register name="A0.X" type="NORMAL" x="5" y="2"/>
+	<register name="A0.L" type="NORMAL" x="5" y="3"/>
+	<register name="A0.H" type="NORMAL" x="5" y="4"/>
+	<register name="A1" type="NORMAL" x="25" y="0"/>
+	<register name="A1.W" type="NORMAL" x="25" y="1"/>
+	<register name="A1.X" type="NORMAL" x="25" y="2"/>
+	<register name="A1.L" type="NORMAL" x="25" y="3"/>
+	<register name="A1.H" type="NORMAL" x="25" y="4"/>
+</window>
+<window name="Loop Counters" menu="&amp;Register:&amp;Core:Loop Counters" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x13" help-tag="\BF533-HWR.chm::/EHR_04_program_sequencer4.html">
+	<register name="LC0" type="NORMAL" x="5" y="0"/>
+	<register name="LT0" type="NORMAL" x="5" y="1"/>
+	<register name="LB0" type="NORMAL" x="5" y="2"/>
+	<register name="LC1" type="NORMAL" x="5" y="4"/>
+	<register name="LT1" type="NORMAL" x="5" y="5"/>
+	<register name="LB1" type="NORMAL" x="5" y="6"/>
+</window>
+<window name="Cycles" menu="&amp;Register:&amp;Core:Cycles" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x12" help-tag="HID_Cycles_Window.htm">
+	<register name="CYCLES" type="NORMAL" x="8" y="0"/>
+	<register name="CYCLES2" type="NORMAL" x="8" y="1"/>
+</window>
+<window name="PC Counters" menu="&amp;Register:&amp;Core:PC Counters" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x19" help-tag="HID_PC_Window.htm">
+	<register name="PC" type="NORMAL" x="8" y="0"/>
+</window>
+<window name="Core Timer Register File" menu="&amp;Register:&amp;Core:Core Timer Register File" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x8" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_CORE_TIMER_REGISTER_LIST.html">
+	<register name="TCNTL" type="NORMAL" x="9" y="0"/>
+	<register name="TINT" type="NORMAL" x="15" y="1"/>
+	<register name="TAUTORLD" type="NORMAL" x="27" y="1"/>
+	<register name="TMREN" type="NORMAL" x="35" y="1"/>
+	<register name="TMPWR" type="NORMAL" x="43" y="1"/>
+	<register name="TPERIOD" type="NORMAL" x="9" y="3"/>
+	<register name="TSCALE" type="NORMAL" x="9" y="4"/>
+	<register name="TCOUNT" type="NORMAL" x="9" y="5"/>
+</window>
+<window name="L1 Data Memory Registers" menu="&amp;Register:&amp;Core:L1 Data Memory Registers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x1B" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMEM_CONTROL_REGISTER_LIST.html">
+	<register name="SRAM_BASE_ADDR" type="NODATA" x="0" y="0"/>
+	<register name="SRAM_BASE_ADDR" type="NOLABEL" x="18" y="0"/>
+	<register name="DMEM_CONTROL" type="NODATA" x="0" y="2"/>
+	<register name="DMEM_CONTROL" type="NOLABEL" x="18" y="2"/>
+	<register name="PORT_PREF1" type="NODATA" x="2" y="3"/>
+	<register name="PORT_PREF1" type="NOLABEL" x="20" y="3"/>
+	<register name="PORT_PREF0" type="NODATA" x="2" y="4"/>
+	<register name="PORT_PREF0" type="NOLABEL" x="20" y="4"/>
+	<register name="DCBS" type="NODATA" x="2" y="5"/>
+	<register name="DCBS" type="NOLABEL" x="20" y="5"/>
+	<register name="DMC" type="NODATA" x="2" y="6"/>
+	<register name="DMC" type="NOLABEL" x="20" y="6"/>
+	<register name="ENDCPLB" type="NODATA" x="2" y="7"/>
+	<register name="ENDCPLB" type="NOLABEL" x="20" y="7"/>
+	<register name="ENDM" type="NODATA" x="2" y="8"/>
+	<register name="ENDM" type="NOLABEL" x="20" y="8"/>
+	<register name="DCPLB_STATUS" type="NODATA" x="0" y="10"/>
+	<register name="DATA_FAULT_STATUS" type="NOLABEL" x="18" y="10"/>
+	<register name="FAULT_ILLADDR" type="NODATA" x="2" y="11"/>
+	<register name="DATA_FAULT_ILLADDR" type="NOLABEL" x="20" y="11"/>
+	<register name="FAULT_DAG" type="NODATA" x="2" y="12"/>
+	<register name="FAULT_DAG" type="NOLABEL" x="20" y="12"/>
+	<register name="FAULT_USERSUPV" type="NODATA" x="2" y="13"/>
+	<register name="DATA_FAULT_USERSUPV" type="NOLABEL" x="20" y="13"/>
+	<register name="FAULT_READWRITE" type="NODATA" x="2" y="14"/>
+	<register name="FAULT_READWRITE" type="NOLABEL" x="20" y="14"/>
+	<register name="DATA_FAULT" type="NODATA" x="2" y="15"/>
+	<register name="DATA_FAULT" type="NOLABEL" x="20" y="15"/>
+	<register name="DCPLB_FAULT_ADDR" type="NODATA" x="0" y="17"/>
+	<register name="DATA_FAULT_ADDR" type="NOLABEL" x="18" y="17"/>
+	<register name="DCPLB_ADDR0" type="NORMAL" x="18" y="19"/>
+	<register name="DCPLB_ADDR1" type="NORMAL" x="18" y="20"/>
+	<register name="DCPLB_ADDR2" type="NORMAL" x="18" y="21"/>
+	<register name="DCPLB_ADDR3" type="NORMAL" x="18" y="22"/>
+	<register name="DCPLB_ADDR4" type="NORMAL" x="18" y="23"/>
+	<register name="DCPLB_ADDR5" type="NORMAL" x="18" y="24"/>
+	<register name="DCPLB_ADDR6" type="NORMAL" x="18" y="25"/>
+	<register name="DCPLB_ADDR7" type="NORMAL" x="18" y="26"/>
+	<register name="DCPLB_ADDR8" type="NORMAL" x="18" y="27"/>
+	<register name="DCPLB_ADDR9" type="NORMAL" x="18" y="28"/>
+	<register name="DCPLB_ADDR10" type="NORMAL" x="18" y="29"/>
+	<register name="DCPLB_ADDR11" type="NORMAL" x="18" y="30"/>
+	<register name="DCPLB_ADDR12" type="NORMAL" x="18" y="31"/>
+	<register name="DCPLB_ADDR13" type="NORMAL" x="18" y="32"/>
+	<register name="DCPLB_ADDR14" type="NORMAL" x="18" y="33"/>
+	<register name="DCPLB_ADDR15" type="NORMAL" x="18" y="34"/>
+	<register name="DCPLB_DATA0" type="NORMAL" x="42" y="19"/>
+	<register name="DCPLB_DATA1" type="NORMAL" x="42" y="20"/>
+	<register name="DCPLB_DATA2" type="NORMAL" x="42" y="21"/>
+	<register name="DCPLB_DATA3" type="NORMAL" x="42" y="22"/>
+	<register name="DCPLB_DATA4" type="NORMAL" x="42" y="23"/>
+	<register name="DCPLB_DATA5" type="NORMAL" x="42" y="24"/>
+	<register name="DCPLB_DATA6" type="NORMAL" x="42" y="25"/>
+	<register name="DCPLB_DATA7" type="NORMAL" x="42" y="26"/>
+	<register name="DCPLB_DATA8" type="NORMAL" x="42" y="27"/>
+	<register name="DCPLB_DATA9" type="NORMAL" x="42" y="28"/>
+	<register name="DCPLB_DATA10" type="NORMAL" x="42" y="29"/>
+	<register name="DCPLB_DATA11" type="NORMAL" x="42" y="30"/>
+	<register name="DCPLB_DATA12" type="NORMAL" x="42" y="31"/>
+	<register name="DCPLB_DATA13" type="NORMAL" x="42" y="32"/>
+	<register name="DCPLB_DATA14" type="NORMAL" x="42" y="33"/>
+	<register name="DCPLB_DATA15" type="NORMAL" x="42" y="34"/>
+	<register name="DTEST_COMMAND" type="NODATA" x="0" y="36"/>
+	<register name="DTEST_COMMAND" type="NOLABEL" x="18" y="36"/>
+	<register name="DTEST_DATA0" type="NODATA" x="0" y="37"/>
+	<register name="DTEST_DATA0" type="NOLABEL" x="18" y="37"/>
+	<register name="DTEST_DATA1" type="NODATA" x="0" y="38"/>
+	<register name="DTEST_DATA1" type="NOLABEL" x="18" y="38"/>
+</window>
+<window name="L1 Code Memory Registers" menu="&amp;Register:&amp;Core:L1 Code Memory Registers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0x1C" help-tag="\BF533-HWR.chm::/EHR_A_core_MMR_assignments3.html">
+	<register name="IMEM_CONTROL" type="NODATA" x="0" y="0"/>
+	<register name="IMEM_CONTROL" type="NOLABEL" x="18" y="0"/>
+	<register name="LRUPRIORST" type="NODATA" x="2" y="1"/>
+	<register name="LRUPRIORST" type="NOLABEL" x="18" y="1"/>
+	<register name="ILOC" type="NODATA" x="2" y="2"/>
+	<register name="ILOC" type="NOLABEL" x="20" y="2"/>
+	<register name="IMC" type="NODATA" x="2" y="3"/>
+	<register name="IMC" type="NOLABEL" x="20" y="3"/>
+	<register name="ENICPLB" type="NODATA" x="2" y="4"/>
+	<register name="ENICPLB" type="NOLABEL" x="20" y="4"/>
+	<register name="ICPLB_STATUS" type="NODATA" x="0" y="7"/>
+	<register name="CODE_FAULT_STATUS" type="NOLABEL" x="18" y="7"/>
+	<register name="FAULT_ILLADDR" type="NODATA" x="2" y="8"/>
+	<register name="CODE_FAULT_ILLADDR" type="NOLABEL" x="20" y="8"/>
+	<register name="FAULT_USERSUPV" type="NODATA" x="2" y="9"/>
+	<register name="CODE_FAULT_USERSUPV" type="NOLABEL" x="20" y="9"/>
+	<register name="FAULT" type="NODATA" x="2" y="10"/>
+	<register name="CODE_FAULT" type="NOLABEL" x="20" y="10"/>
+	<register name="ICPLB_FAULT_ADDR" type="NODATA" x="0" y="12"/>
+	<register name="CODE_FAULT_ADDR" type="NOLABEL" x="18" y="12"/>
+	<register name="ICPLB_ADDR0" type="NORMAL" x="18" y="14"/>
+	<register name="ICPLB_ADDR1" type="NORMAL" x="18" y="15"/>
+	<register name="ICPLB_ADDR2" type="NORMAL" x="18" y="16"/>
+	<register name="ICPLB_ADDR3" type="NORMAL" x="18" y="17"/>
+	<register name="ICPLB_ADDR4" type="NORMAL" x="18" y="18"/>
+	<register name="ICPLB_ADDR5" type="NORMAL" x="18" y="19"/>
+	<register name="ICPLB_ADDR6" type="NORMAL" x="18" y="20"/>
+	<register name="ICPLB_ADDR7" type="NORMAL" x="18" y="21"/>
+	<register name="ICPLB_ADDR8" type="NORMAL" x="18" y="22"/>
+	<register name="ICPLB_ADDR9" type="NORMAL" x="18" y="23"/>
+	<register name="ICPLB_ADDR10" type="NORMAL" x="18" y="24"/>
+	<register name="ICPLB_ADDR11" type="NORMAL" x="18" y="25"/>
+	<register name="ICPLB_ADDR12" type="NORMAL" x="18" y="26"/>
+	<register name="ICPLB_ADDR13" type="NORMAL" x="18" y="27"/>
+	<register name="ICPLB_ADDR14" type="NORMAL" x="18" y="28"/>
+	<register name="ICPLB_ADDR15" type="NORMAL" x="18" y="29"/>
+	<register name="ICPLB_DATA0" type="NORMAL" x="42" y="14"/>
+	<register name="ICPLB_DATA1" type="NORMAL" x="42" y="15"/>
+	<register name="ICPLB_DATA2" type="NORMAL" x="42" y="16"/>
+	<register name="ICPLB_DATA3" type="NORMAL" x="42" y="17"/>
+	<register name="ICPLB_DATA4" type="NORMAL" x="42" y="18"/>
+	<register name="ICPLB_DATA5" type="NORMAL" x="42" y="19"/>
+	<register name="ICPLB_DATA6" type="NORMAL" x="42" y="20"/>
+	<register name="ICPLB_DATA7" type="NORMAL" x="42" y="21"/>
+	<register name="ICPLB_DATA8" type="NORMAL" x="42" y="22"/>
+	<register name="ICPLB_DATA9" type="NORMAL" x="42" y="23"/>
+	<register name="ICPLB_DATA10" type="NORMAL" x="42" y="24"/>
+	<register name="ICPLB_DATA11" type="NORMAL" x="42" y="25"/>
+	<register name="ICPLB_DATA12" type="NORMAL" x="42" y="26"/>
+	<register name="ICPLB_DATA13" type="NORMAL" x="42" y="27"/>
+	<register name="ICPLB_DATA14" type="NORMAL" x="42" y="28"/>
+	<register name="ICPLB_DATA15" type="NORMAL" x="42" y="29"/>
+	<register name="ITEST_COMMAND" type="NODATA" x="0" y="31"/>
+	<register name="ITEST_COMMAND" type="NOLABEL" x="18" y="31"/>
+	<register name="ITEST_DATA0" type="NODATA" x="0" y="32"/>
+	<register name="ITEST_DATA0" type="NOLABEL" x="18" y="32"/>
+	<register name="ITEST_DATA1" type="NODATA" x="0" y="33"/>
+	<register name="ITEST_DATA1" type="NOLABEL" x="18" y="33"/>
+</window>
+<window name="Event Vector Registers" menu="&amp;Register:&amp;Core:Event Vector Registers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0x1D" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_IMEM_CONTROL_REGISTER_LIST.html">
+	<register name="EVT0" type="NORMAL" x="7" y="1"/>
+	<register name="EVT1" type="NORMAL" x="7" y="2"/>
+	<register name="EVT2" type="NORMAL" x="7" y="3"/>
+	<register name="EVT3" type="NORMAL" x="7" y="4"/>
+	<register name="EVT4" type="NORMAL" x="7" y="5"/>
+	<register name="EVT5" type="NORMAL" x="7" y="6"/>
+	<register name="EVT6" type="NORMAL" x="7" y="7"/>
+	<register name="EVT7" type="NORMAL" x="7" y="8"/>
+	<register name="EVT8" type="NORMAL" x="7" y="9"/>
+	<register name="EVT9" type="NORMAL" x="7" y="10"/>
+	<register name="EVT10" type="NORMAL" x="7" y="11"/>
+	<register name="EVT11" type="NORMAL" x="7" y="12"/>
+	<register name="EVT12" type="NORMAL" x="7" y="13"/>
+	<register name="EVT13" type="NORMAL" x="7" y="14"/>
+	<register name="EVT14" type="NORMAL" x="7" y="15"/>
+	<register name="EVT15" type="NORMAL" x="7" y="16"/>
+</window>
+<window name="Sequencer Status" menu="&amp;Register:&amp;Core:Status:Sequencer Status" description="" format="Hexadecimal" format-selection="All" type="SIM EMU CORE" help-id="0xF" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_REG_SEQSTAT.html">
+	<register name="SEQSTAT" type="NORMAL" x="8" y="0"/>
+	<register name="EXCAUSE" type="NORMAL" x="10" y="2"/>
+	<!--register name="OMODE" type="NORMAL" x="10" y="3"/-->
+	<register name="IDLE_REQ" type="NORMAL" x="10" y="3"/>
+	<register name="SFTRESET" type="NORMAL" x="10" y="4"/>
+	<register name="HWERRCAUSE" type="NORMAL" x="10" y="5"/>
+</window>
+<window name="Arithmetic Status" menu="&amp;Register:&amp;Core:Status:Arithmetic Status" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD039" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_REG_ASTAT.html">
+	<register name="ASTAT" type="NORMAL" x="5" y="1"/>
+	<register name="AZ" type="NORMAL" x="7" y="2"/>
+	<register name="AN" type="NORMAL" x="7" y="3"/>
+	<register name="CC" type="NORMAL" x="7" y="4"/>
+	<register name="AQ" type="NORMAL" x="7" y="5"/>
+	<register name="RND_MOD" type="NORMAL" x="7" y="6"/>
+	<register name="AC0" type="NORMAL" x="7" y="7"/>
+	<register name="AC1" type="NORMAL" x="7" y="8"/>
+	<register name="AV0" type="NORMAL" x="20" y="2"/>
+	<register name="AV0S" type="NORMAL" x="20" y="3"/>
+	<register name="AV1" type="NORMAL" x="20" y="4"/>
+	<register name="AV1S" type="NORMAL" x="20" y="5"/>
+	<register name="V" type="NORMAL" x="20" y="6"/>
+	<register name="VS" type="NORMAL" x="20" y="7"/>
+</window>
+<window name="Phase Locked Loop" menu="&amp;Register:&amp;Core:PLL Register File" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD03A" help-tag="\BF533-HWR.chm::/EHR_08_dynamic_power_mgmt7.html">
+	<register name="PLL_CTL" type="NORMAL" x="11" y="0"/>
+	<register name="PLL_DIV" type="NORMAL" x="11" y="1"/>
+	<register name="VR_CTL" type="NORMAL" x="11" y="2"/>
+	<register name="PLL_STAT" type="NORMAL" x="11" y="3"/>
+	<register name="PLL_LOCKCNT" type="NORMAL" x="11" y="4"/>
+</window>
+<window name="SPT1" menu="&amp;Register:&amp;Peripherals:SPT1" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD038" help-tag="\procfrio.chm::/html/hid_peripheral_sp1532.htm">
+	<register name="STATUS" type="NODATA" x="10" y="1"/>
+	<register name="- SETUP -" type="NODATA" x="12" y="3"/>
+	<register name="Receive" type="NODATA" x="14" y="4"/>
+	<register name="Transmit" type="NODATA" x="24" y="4"/>
+	<register name="CONFIG1" type="NODATA" x="0" y="5"/>
+	<register name="CONFIG2" type="NODATA" x="0" y="6"/>
+	<register name="SCLKDIV" type="NODATA" x="0" y="7"/>
+	<register name="FSDIV" type="NODATA" x="0" y="8"/>
+	<register name="- PARALLEL REGS -" type="NODATA" x="8" y="11"/>
+	<register name="RX/TX" type="NODATA" x="0" y="12"/>
+	<register name="- MCM -" type="NODATA" x="13" y="14"/>
+	<register name="Receive" type="NODATA" x="14" y="15"/>
+	<register name="Transmit" type="NODATA" x="24" y="15"/>
+	<register name="CS0" type="NODATA" x="0" y="16"/>
+	<register name="CS1" type="NODATA" x="0" y="17"/>
+	<register name="CS2" type="NODATA" x="0" y="18"/>
+	<register name="CS3" type="NODATA" x="0" y="19"/>
+	<register name="- MCM CONFIG -" type="NODATA" x="9" y="21"/>
+	<register name="MCMC1/MCMC2" type="NODATA" x="0" y="22"/>
+	<register name="Current Channel" type="NODATA" x="0" y="24"/>
+	<register name="SPT1_STAT" type="NOLABEL" x="18" y="1"/>
+	<register name="SPT1_RX_CONFIG0" type="NOLABEL" x="14" y="5"/>
+	<register name="SPT1_RX_CONFIG1" type="NOLABEL" x="14" y="6"/>
+	<register name="SPT1_TX_CONFIG0" type="NOLABEL" x="24" y="5"/>
+	<register name="SPT1_TX_CONFIG1" type="NOLABEL" x="24" y="6"/>
+	<register name="SPT1_RSCLKDIV" type="NOLABEL" x="14" y="7"/>
+	<register name="SPT1_TSCLKDIV" type="NOLABEL" x="24" y="7"/>
+	<register name="SPT1_RFSDIV" type="NOLABEL" x="14" y="8"/>
+	<register name="SPT1_TFSDIV" type="NOLABEL" x="24" y="8"/>
+	<register name="SPT1_RX" type="NOLABEL" x="14" y="12"/>
+	<register name="SPT1_TX" type="NOLABEL" x="24" y="12"/>
+	<register name="SPT1_MRCS0" type="NOLABEL" x="14" y="16"/>
+	<register name="SPT1_MRCS1" type="NOLABEL" x="14" y="17"/>
+	<register name="SPT1_MRCS2" type="NOLABEL" x="14" y="18"/>
+	<register name="SPT1_MRCS3" type="NOLABEL" x="14" y="19"/>
+	<register name="SPT1_MTCS0" type="NOLABEL" x="24" y="16"/>
+	<register name="SPT1_MTCS1" type="NOLABEL" x="24" y="17"/>
+	<register name="SPT1_MTCS2" type="NOLABEL" x="24" y="18"/>
+	<register name="SPT1_MTCS3" type="NOLABEL" x="24" y="19"/>
+	<register name="SPT1_MCMC1" type="NOLABEL" x="16" y="22"/>
+	<register name="SPT1_MCMC2" type="NOLABEL" x="22" y="22"/>
+	<register name="SPT1_CHNL" type="NOLABEL" x="22" y="24"/>
+</window>
+<window name="SPT0" menu="&amp;Register:&amp;Peripherals:SPT0" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD037" help-tag="\procfrio.chm::/html/hid_peripheral_sp1532.htm">
+	<register name="STATUS" type="NODATA" x="10" y="1"/>
+	<register name="- SETUP -" type="NODATA" x="12" y="3"/>
+	<register name="Receive" type="NODATA" x="14" y="4"/>
+	<register name="Transmit" type="NODATA" x="24" y="4"/>
+	<register name="CONFIG1" type="NODATA" x="0" y="5"/>
+	<register name="CONFIG2" type="NODATA" x="0" y="6"/>
+	<register name="SCLKDIV" type="NODATA" x="0" y="7"/>
+	<register name="FSDIV" type="NODATA" x="0" y="8"/>
+	<register name="- PARALLEL REGS -" type="NODATA" x="8" y="11"/>
+	<register name="RX/TX" type="NODATA" x="0" y="12"/>
+	<register name="- MCM -" type="NODATA" x="13" y="14"/>
+	<register name="Receive" type="NODATA" x="14" y="15"/>
+	<register name="Transmit" type="NODATA" x="24" y="15"/>
+	<register name="CS0" type="NODATA" x="0" y="16"/>
+	<register name="CS1" type="NODATA" x="0" y="17"/>
+	<register name="CS2" type="NODATA" x="0" y="18"/>
+	<register name="CS3" type="NODATA" x="0" y="19"/>
+	<register name="- MCM CONFIG -" type="NODATA" x="9" y="21"/>
+	<register name="MCMC1/MCMC2" type="NODATA" x="0" y="22"/>
+	<register name="Current Channel" type="NODATA" x="0" y="24"/>
+	<register name="SPT0_STAT" type="NOLABEL" x="18" y="1"/>
+	<register name="SPT0_RX_CONFIG0" type="NOLABEL" x="14" y="5"/>
+	<register name="SPT0_RX_CONFIG1" type="NOLABEL" x="14" y="6"/>
+	<register name="SPT0_TX_CONFIG0" type="NOLABEL" x="24" y="5"/>
+	<register name="SPT0_TX_CONFIG1" type="NOLABEL" x="24" y="6"/>
+	<register name="SPT0_RSCLKDIV" type="NOLABEL" x="14" y="7"/>
+	<register name="SPT0_TSCLKDIV" type="NOLABEL" x="24" y="7"/>
+	<register name="SPT0_RFSDIV" type="NOLABEL" x="14" y="8"/>
+	<register name="SPT0_TFSDIV" type="NOLABEL" x="24" y="8"/>
+	<register name="SPT0_RX" type="NOLABEL" x="14" y="12"/>
+	<register name="SPT0_TX" type="NOLABEL" x="24" y="12"/>
+	<register name="SPT0_MRCS0" type="NOLABEL" x="14" y="16"/>
+	<register name="SPT0_MRCS1" type="NOLABEL" x="14" y="17"/>
+	<register name="SPT0_MRCS2" type="NOLABEL" x="14" y="18"/>
+	<register name="SPT0_MRCS3" type="NOLABEL" x="14" y="19"/>
+	<register name="SPT0_MTCS0" type="NOLABEL" x="24" y="16"/>
+	<register name="SPT0_MTCS1" type="NOLABEL" x="24" y="17"/>
+	<register name="SPT0_MTCS2" type="NOLABEL" x="24" y="18"/>
+	<register name="SPT0_MTCS3" type="NOLABEL" x="24" y="19"/>
+	<register name="SPT0_MCMC1" type="NOLABEL" x="16" y="22"/>
+	<register name="SPT0_MCMC2" type="NOLABEL" x="22" y="22"/>
+	<register name="SPT0_CHNL" type="NOLABEL" x="22" y="24"/>
+</window>
+<window name="PPI Registers" menu="&amp;Register:&amp;Peripherals:PPI" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD035" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_PPI_REGISTER_LIST.html">
+	<register name="CONTROL" type="NODATA" x="0" y="0"/>
+	<register name="PORT_EN" type="NORMAL" x="10" y="1"/>
+	<register name="PORT_DIR" type="NORMAL" x="10" y="2"/>
+	<register name="XFR_TYPE" type="NORMAL" x="10" y="3"/>
+	<register name="PORT_CFG" type="NORMAL" x="10" y="4"/>
+	<register name="FLD_SEL" type="NORMAL" x="10" y="5"/>
+	<register name="PACK_EN" type="NORMAL" x="10" y="6"/>
+	<register name="DMA32" type="NORMAL" x="10" y="7"/>
+	<register name="SKIP_EN" type="NORMAL" x="10" y="8"/>
+	<register name="SKIP_EO" type="NORMAL" x="10" y="9"/>
+	<register name="DLEN" type="NORMAL" x="10" y="10"/>
+	<register name="POL" type="NORMAL" x="10" y="11"/>
+	<register name="STATUS" type="NODATA" x="0" y="13"/>
+	<register name="FLD" type="NORMAL" x="10" y="14"/>
+	<register name="FT_ERR" type="NORMAL" x="10" y="15"/>
+	<register name="OVR" type="NORMAL" x="10" y="16"/>
+	<register name="UNDR" type="NORMAL" x="10" y="17"/>
+	<register name="ERR_DET" type="NORMAL" x="10" y="18"/>
+	<register name="ERR_NCOR" type="NORMAL" x="10" y="19"/>
+	<register name="DELAY" type="NODATA" x="0" y="21"/>
+	<register name="COUNT" type="NODATA" x="0" y="22"/>
+	<register name="FRAME" type="NODATA" x="0" y="23"/>
+	<register name="PPI_CONTROL" type="NOLABEL" x="9" y="0"/>
+	<register name="PPI_STATUS" type="NOLABEL" x="9" y="13"/>
+	<register name="PPI_DELAY" type="NOLABEL" x="9" y="21"/>
+	<register name="PPI_COUNT" type="NOLABEL" x="9" y="22"/>
+	<register name="PPI_FRAME" type="NOLABEL" x="9" y="23"/>
+</window>
+<window name="UART Registers" menu="&amp;Register:&amp;Peripherals:UART" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD036" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_UART_CONTROLLER_REGISTER_LIST.html">
+	<register name="DLL   Divisor Latch Low Byte" type="NODATA" x="0" y="0"/>
+	<register name="UART_DLL" type="NOLABEL" x="32" y="0"/>
+	<register name="DLH   Divisor Latch High Byte" type="NODATA" x="0" y="1"/>
+	<register name="UART_DLH" type="NOLABEL" x="32" y="1"/>
+	<register name="IER   Interrupt Enable" type="NODATA" x="0" y="2"/>
+	<register name="UART_IER" type="NOLABEL" x="32" y="2"/>
+	<register name="IIR   Interrupt Identification" type="NODATA" x="0" y="3"/>
+	<register name="UART_IIR" type="NOLABEL" x="32" y="3"/>
+	<register name="LCR   Line Control" type="NODATA" x="0" y="4"/>
+	<register name="UART_LCR" type="NOLABEL" x="32" y="4"/>
+	<register name="MCR   Modem Control" type="NODATA" x="0" y="5"/>
+	<register name="UART_MCR" type="NOLABEL" x="32" y="5"/>
+	<register name="LSR   Line Status" type="NODATA" x="0" y="6"/>
+	<register name="UART_LSR" type="NOLABEL" x="32" y="6"/>
+	<register name="SCR   Scratch Register" type="NODATA" x="0" y="7"/>
+	<register name="UART_SCR" type="NOLABEL" x="32" y="7"/>
+	<register name="THR   Transmit Holding" type="NODATA" x="0" y="8"/>
+	<register name="UART_THR" type="NOLABEL" x="32" y="8"/>
+	<register name="GCTL  Global Control " type="NODATA" x="0" y="9"/>
+	<register name="UART_GCTL" type="NOLABEL" x="32" y="9"/>
+	<register name="RBR   Receive Buffer" type="NODATA" x="0" y="10"/>
+	<register name="UART_RBR" type="NOLABEL" x="32" y="10"/>
+</window>
+<window name="Timer Registers" menu="&amp;Register:&amp;Peripherals:Timers" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD033" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_TIMER_REGISTER_LIST.html">
+	<register name="TIMER_ENABLE"  type="NODATA"  x="0"  y="0"/>
+	<register name="TIMER_ENABLE"  type="NOLABEL" x="14" y="0"/>
+	<register name="TIMER_DISABLE" type="NODATA"  x="0"  y="1"/>
+	<register name="TIMER_DISABLE" type="NOLABEL" x="14" y="1"/>
+	<register name="TIMER_STATUS"  type="NODATA"  x="0"  y="2"/>
+	<register name="TIMER_STATUS"  type="NOLABEL" x="14" y="2"/>
+
+	<register name="CONFIG"  type="NODATA" x="10" y="4"/>
+	<register name="COUNTER" type="NODATA" x="18" y="4"/>
+	<register name="PERIOD"  type="NODATA" x="29" y="4"/>
+	<register name="WIDTH"   type="NODATA" x="40" y="4"/>
+
+	<register name="TIMER 0" type="NODATA" x="0" y="5"/>
+	<register name="TIMER0_CONFIG"  type="NOLABEL" x="10" y="5"/>
+	<register name="TIMER0_COUNTER" type="NOLABEL" x="18" y="5"/>
+	<register name="TIMER0_PERIOD"  type="NOLABEL" x="29" y="5"/>
+	<register name="TIMER0_WIDTH"   type="NOLABEL" x="40" y="5"/>
+
+	<register name="TIMER 1" type="NODATA" x="0" y="6"/>
+	<register name="TIMER1_CONFIG"  type="NOLABEL" x="10" y="6"/>
+	<register name="TIMER1_COUNTER" type="NOLABEL" x="18" y="6"/>
+	<register name="TIMER1_PERIOD"  type="NOLABEL" x="29" y="6"/>
+	<register name="TIMER1_WIDTH"   type="NOLABEL" x="40" y="6"/>
+
+	<register name="TIMER 2" type="NODATA" x="0" y="7"/>
+	<register name="TIMER2_CONFIG"  type="NOLABEL" x="10" y="7"/>
+	<register name="TIMER2_COUNTER" type="NOLABEL" x="18" y="7"/>
+	<register name="TIMER2_PERIOD"  type="NOLABEL" x="29" y="7"/>
+	<register name="TIMER2_WIDTH"   type="NOLABEL" x="40" y="7"/>
+</window>
+<window name="System Interrupt Controller Register File" menu="&amp;Register:&amp;Peripherals:System Interrupt Controller" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD034" help-tag="HID_PERIPHERAL_ECIC532.htm">
+	<register name="SIC_IAR0"  type="NORMAL" x="11" y="0"/>
+	<register name="SIC_IAR1"  type="NORMAL" x="11" y="1"/>
+	<register name="SIC_IAR2"  type="NORMAL" x="11" y="2"/>
+	<register name="SIC_IMASK" type="NORMAL" x="11" y="3"/>
+	<register name="SIC_ISR"   type="NORMAL" x="11" y="4"/>
+	<register name="SIC_IWR"   type="NORMAL" x="11" y="5"/>
+</window>
+<window name="MEMDMA1 Destination Registers" menu="&amp;Register:&amp;Peripherals:MEMDMAFlex:Destination Channel-1" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD029" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="MDMA_D1_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="MDMAFLX1_NxtDscPNTRHigh_D" type="NOLABEL" x="28" y="1"/>
+	<register name="MDMAFLX1_NxtDscPNTRLow_D" type="NOLABEL" x="36" y="1"/>
+	<register name="MDMA_D1_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="MDMAFLX1_BaseAddrHigh_D" type="NOLABEL" x="28" y="2"/>
+	<register name="MDMAFLX1_BaseAddrLow_D" type="NOLABEL" x="36" y="2"/>
+	<register name="MDMA_D1_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="MDMAFLX1_DMACNFG_D" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="MDMAFLX1_DMACNFG_D_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="MDMAFLX1_DMACNFG_D_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="MDMAFLX1_DMACNFG_D_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="MDMAFLX1_DMACNFG_D_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="MDMAFLX1_DMACNFG_D_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="MDMAFLX1_DMACNFG_D_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="MDMAFLX1_DMACNFG_D_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="MDMAFLX1_DMACNFG_D_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="MDMAFLX1_DMACNFG_D_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="MDMA_D1_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="MDMAFLX1_XCOUNT_D" type="NOLABEL" x="32" y="15"/>
+	<register name="MDMA_D1_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="MDMAFLX1_XMODIFY_D" type="NOLABEL" x="32" y="16"/>
+	<register name="MDMA_D1_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="MDMAFLX1_YCOUNT_D" type="NOLABEL" x="32" y="17"/>
+	<register name="MDMA_D1_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="MDMAFLX1_YMODIFY_D" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="MDMA_D1_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="MDMAFLX1_CURDESCHIGH_D" type="NOLABEL" x="28" y="21"/>
+	<register name="MDMAFLX1_CURDESCLOW_D" type="NOLABEL" x="36" y="21"/>
+	<register name="MDMA_D1_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="MDMAFLX1_CURADDRHIGH_D" type="NOLABEL" x="28" y="22"/>
+	<register name="MDMAFLX1_CURADDRLOW_D" type="NOLABEL" x="36" y="22"/>
+	<register name="MDMA_D1_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="MDMAFLX1_IRQSTAT_D" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="MDMAFLX1_IRQSTAT_D_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="MDMAFLX1_IRQSTAT_D_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="MDMAFLX1_IRQSTAT_D_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="MDMAFLX1_IRQSTAT_D_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="MDMA_D1_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="MDMAFLX1_PMAP_D" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="MDMAFLX1_PMAP_D_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="MDMAFLX1_PMAP_D_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="MDMA_D1_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="MDMAFLX1_CURXCOUNT_D" type="NOLABEL" x="32" y="34"/>
+	<register name="MDMA_D1_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="MDMAFLX1_CURYCOUNT_D" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="MEMDMA1 Source Registers" menu="&amp;Register:&amp;Peripherals:MEMDMAFlex:Source Channel-1" description="" format="Hexadecimal" format-selection="ALL" type="SIM EMU" help-id="0xD02A" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="MDMA_S1_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="MDMAFLX1_NxtDscPNTRHigh_S" type="NOLABEL" x="28" y="1"/>
+	<register name="MDMAFLX1_NxtDscPNTRLow_S" type="NOLABEL" x="36" y="1"/>
+	<register name="MDMA_S1_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="MDMAFLX1_BaseAddrHigh_S" type="NOLABEL" x="28" y="2"/>
+	<register name="MDMAFLX1_BaseAddrLow_S" type="NOLABEL" x="36" y="2"/>
+	<register name="MDMA_S1_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="MDMAFLX1_DMACNFG_S" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="MDMAFLX1_DMACNFG_S_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="MDMAFLX1_DMACNFG_S_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="MDMAFLX1_DMACNFG_S_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="MDMAFLX1_DMACNFG_S_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="MDMAFLX1_DMACNFG_S_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="MDMAFLX1_DMACNFG_S_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="MDMAFLX1_DMACNFG_S_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="MDMAFLX1_DMACNFG_S_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="MDMAFLX1_DMACNFG_S_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="MDMA_S1_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="MDMAFLX1_XCOUNT_S" type="NOLABEL" x="32" y="15"/>
+	<register name="MDMA_S1_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="MDMAFLX1_XMODIFY_S" type="NOLABEL" x="32" y="16"/>
+	<register name="MDMA_S1_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="MDMAFLX1_YCOUNT_S" type="NOLABEL" x="32" y="17"/>
+	<register name="MDMA_S1_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="MDMAFLX1_YMODIFY_S" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="MDMA_S1_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="MDMAFLX1_CURDESCHIGH_S" type="NOLABEL" x="28" y="21"/>
+	<register name="MDMAFLX1_CURDESCLOW_S" type="NOLABEL" x="36" y="21"/>
+	<register name="MDMA_S1_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="MDMAFLX1_CURADDRHIGH_S" type="NOLABEL" x="28" y="22"/>
+	<register name="MDMAFLX1_CURADDRLOW_S" type="NOLABEL" x="36" y="22"/>
+	<register name="MDMA_S1_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="MDMAFLX1_IRQSTAT_S" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="MDMAFLX1_IRQSTAT_S_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="MDMAFLX1_IRQSTAT_S_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="MDMAFLX1_IRQSTAT_S_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="MDMAFLX1_IRQSTAT_S_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="MDMA_S1_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="MDMAFLX1_PMAP_S" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="MDMAFLX1_PMAP_S_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="MDMAFLX1_PMAP_S_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="MDMA_S1_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="MDMAFLX1_CURXCOUNT_S" type="NOLABEL" x="32" y="34"/>
+	<register name="MDMA_S1_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="MDMAFLX1_CURYCOUNT_S" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="MEMDMA0 Destination Registers" menu="&amp;Register:&amp;Peripherals:MEMDMAFlex:Destination Channel-0" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD027" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="MDMA_D0_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="MDMAFLX0_NxtDscPNTRHigh_D" type="NOLABEL" x="28" y="1"/>
+	<register name="MDMAFLX0_NxtDscPNTRLow_D" type="NOLABEL" x="36" y="1"/>
+	<register name="MDMA_D0_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="MDMAFLX0_BaseAddrHigh_D" type="NOLABEL" x="28" y="2"/>
+	<register name="MDMAFLX0_BaseAddrLow_D" type="NOLABEL" x="36" y="2"/>
+	<register name="MDMA_D0_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="MDMAFLX0_DMACNFG_D" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="MDMAFLX0_DMACNFG_D_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="MDMAFLX0_DMACNFG_D_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="MDMAFLX0_DMACNFG_D_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="MDMAFLX0_DMACNFG_D_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="MDMAFLX0_DMACNFG_D_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="MDMAFLX0_DMACNFG_D_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="MDMAFLX0_DMACNFG_D_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="MDMAFLX0_DMACNFG_D_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="MDMAFLX0_DMACNFG_D_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="MDMA_D0_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="MDMAFLX0_XCOUNT_D" type="NOLABEL" x="32" y="15"/>
+	<register name="MDMA_D0_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="MDMAFLX0_XMODIFY_D" type="NOLABEL" x="32" y="16"/>
+	<register name="MDMA_D0_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="MDMAFLX0_YCOUNT_D" type="NOLABEL" x="32" y="17"/>
+	<register name="MDMA_D0_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="MDMAFLX0_YMODIFY_D" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="MDMA_D0_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="MDMAFLX0_CURDESCHIGH_D" type="NOLABEL" x="28" y="21"/>
+	<register name="MDMAFLX0_CURDESCLOW_D" type="NOLABEL" x="36" y="21"/>
+	<register name="MDMA_D0_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="MDMAFLX0_CURADDRHIGH_D" type="NOLABEL" x="28" y="22"/>
+	<register name="MDMAFLX0_CURADDRLOW_D" type="NOLABEL" x="36" y="22"/>
+	<register name="MDMA_D0_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="MDMAFLX0_IRQSTAT_D" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="MDMAFLX0_IRQSTAT_D_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="MDMAFLX0_IRQSTAT_D_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="MDMAFLX0_IRQSTAT_D_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="MDMAFLX0_IRQSTAT_D_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="MDMA_D0_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="MDMAFLX0_PMAP_D" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="MDMAFLX0_PMAP_D_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="MDMAFLX0_PMAP_D_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="MDMA_D0_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="MDMAFLX0_CURXCOUNT_D" type="NOLABEL" x="32" y="34"/>
+	<register name="MDMA_D0_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="MDMAFLX0_CURYCOUNT_D" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="MEMDMA0 Source Registers" menu="&amp;Register:&amp;Peripherals:MEMDMAFlex:Source Channel-0" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD028" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="MDMA_S0_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="MDMAFLX0_NxtDscPNTRHigh_S" type="NOLABEL" x="28" y="1"/>
+	<register name="MDMAFLX0_NxtDscPNTRLow_S" type="NOLABEL" x="36" y="1"/>
+	<register name="MDMA_S0_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="MDMAFLX0_BaseAddrHigh_S" type="NOLABEL" x="28" y="2"/>
+	<register name="MDMAFLX0_BaseAddrLow_S" type="NOLABEL" x="36" y="2"/>
+	<register name="MDMA_S0_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="MDMAFLX0_DMACNFG_S" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="MDMAFLX0_DMACNFG_S_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="MDMAFLX0_DMACNFG_S_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="MDMAFLX0_DMACNFG_S_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="MDMAFLX0_DMACNFG_S_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="MDMAFLX0_DMACNFG_S_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="MDMAFLX0_DMACNFG_S_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="MDMAFLX0_DMACNFG_S_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="MDMAFLX0_DMACNFG_S_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="MDMAFLX0_DMACNFG_S_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="MDMA_S0_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="MDMAFLX0_XCOUNT_S" type="NOLABEL" x="32" y="15"/>
+	<register name="MDMA_S0_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="MDMAFLX0_XMODIFY_S" type="NOLABEL" x="32" y="16"/>
+	<register name="MDMA_S0_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="MDMAFLX0_YCOUNT_S" type="NOLABEL" x="32" y="17"/>
+	<register name="MDMA_S0_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="MDMAFLX0_YMODIFY_S" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="MDMA_S0_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="MDMAFLX0_CURDESCHIGH_S" type="NOLABEL" x="28" y="21"/>
+	<register name="MDMAFLX0_CURDESCLOW_S" type="NOLABEL" x="36" y="21"/>
+	<register name="MDMA_S0_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="MDMAFLX0_CURADDRHIGH_S" type="NOLABEL" x="28" y="22"/>
+	<register name="MDMAFLX0_CURADDRLOW_S" type="NOLABEL" x="36" y="22"/>
+	<register name="MDMA_S0_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="MDMAFLX0_IRQSTAT_S" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="MDMAFLX0_IRQSTAT_S_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="MDMAFLX0_IRQSTAT_S_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="MDMAFLX0_IRQSTAT_S_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="MDMAFLX0_IRQSTAT_S_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="MDMA_S0_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="MDMAFLX0_PMAP_S" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="MDMAFLX0_PMAP_S_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="MDMAFLX0_PMAP_S_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="MDMA_S0_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="MDMAFLX0_CURXCOUNT_S" type="NOLABEL" x="32" y="34"/>
+	<register name="MDMA_S0_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="MDMAFLX0_CURYCOUNT_S" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMA Traffic Control" menu="&amp;Register:&amp;Peripherals:DMA Traffic Control" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_REG_DMA_TC_PER_DMA_TC_CNT.html">
+
+	<register name="DMA_TC_PER" type="NORMAL" x="10" y="0"/>
+	<register name="DCB_TRAFFIC_PERIOD"      type="NODATA" x="2" y="1"/>
+	<register name="DEB_TRAFFIC_PERIOD"      type="NODATA" x="2" y="2"/>
+	<register name="DAB_TRAFFIC_PERIOD"      type="NODATA" x="2" y="3"/>
+	<register name="MDMA_ROUND_ROBIN_PERIOD" type="NODATA" x="2" y="4"/>
+	<register name="DCB_TRAFFIC_PERIOD"      type="NOLABEL" x="26" y="1"/>
+	<register name="DEB_TRAFFIC_PERIOD"      type="NOLABEL" x="26" y="2"/>
+	<register name="DAB_TRAFFIC_PERIOD"      type="NOLABEL" x="26" y="3"/>
+	<register name="MDMA_ROUND_ROBIN_PERIOD" type="NOLABEL" x="26" y="4"/>
+
+	<register name="DMA_TC_CNT" type="NORMAL" x="10" y="6"/>
+	<register name="DCB_TRAFFIC_COUNT"       type="NODATA" x="2" y="7"/>
+	<register name="DEB_TRAFFIC_COUNT"       type="NODATA" x="2" y="8"/>
+	<register name="DAB_TRAFFIC_COUNT"       type="NODATA" x="2" y="9"/>
+	<register name="MDMA_ROUND_ROBIN_COUNT"  type="NODATA" x="2" y="10"/>
+	<register name="DCB_TRAFFIC_COUNT"       type="NOLABEL" x="26" y="7"/>
+	<register name="DEB_TRAFFIC_COUNT"       type="NOLABEL" x="26" y="8"/>
+	<register name="DAB_TRAFFIC_COUNT"       type="NOLABEL" x="26" y="9"/>
+	<register name="MDMA_ROUND_ROBIN_COUNT"  type="NOLABEL" x="26" y="10"/>
+</window>
+<window name="DMAFlex Ch-7 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-7" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD032" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA7_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX7_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX7_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA7_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX7_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX7_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA7_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX7_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX7_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX7_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX7_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX7_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX7_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX7_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX7_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX7_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX7_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA7_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX7_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA7_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX7_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA7_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX7_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA7_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX7_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA7_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX7_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX7_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA7_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX7_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX7_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA7_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX7_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX7_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX7_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX7_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX7_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA7_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX7_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX7_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX7_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA7_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX7_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA7_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX7_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-6 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-6" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD031" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA6_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX6_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX6_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA6_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX6_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX6_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA6_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX6_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX6_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX6_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX6_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX6_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX6_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX6_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX6_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX6_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX6_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA6_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX6_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA6_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX6_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA6_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX6_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA6_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX6_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA6_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX6_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX6_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA6_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX6_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX6_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA6_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX6_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX6_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX6_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX6_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX6_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA6_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX6_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX6_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX6_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA6_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX6_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA6_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX6_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-5 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-5" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD030" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA5_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX5_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX5_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA5_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX5_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX5_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA5_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX5_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX5_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX5_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX5_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX5_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX5_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX5_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX5_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX5_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX5_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA5_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX5_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA5_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX5_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA5_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX5_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA5_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX5_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA5_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX5_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX5_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA5_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX5_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX5_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA5_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX5_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX5_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX5_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX5_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX5_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA5_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX5_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX5_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX5_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA5_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX5_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA5_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX5_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-4 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-4" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD02F" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA4_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX4_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX4_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA4_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX4_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX4_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA4_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX4_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX4_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX4_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX4_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX4_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX4_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX4_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX4_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX4_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX4_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA4_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX4_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA4_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX4_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA4_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX4_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA4_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX4_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA4_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX4_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX4_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA4_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX4_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX4_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA4_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX4_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX4_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX4_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX4_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX4_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA4_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX4_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX4_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX4_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA4_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX4_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA4_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX4_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-3 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-3" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD02E" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA3_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX3_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX3_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA3_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX3_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX3_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA3_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX3_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX3_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX3_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX3_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX3_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX3_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX3_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX3_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX3_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX3_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA3_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX3_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA3_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX3_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA3_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX3_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA3_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX3_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA3_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX3_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX3_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA3_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX3_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX3_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA3_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX3_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX3_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX3_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX3_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX3_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA3_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX3_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX3_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX3_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA3_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX3_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA3_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX3_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-2 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-2" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD02D" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA2_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX2_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX2_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA2_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX2_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX2_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA2_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX2_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX2_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX2_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX2_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX2_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX2_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX2_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX2_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX2_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX2_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA2_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX2_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA2_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX2_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA2_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX2_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA2_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX2_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA2_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX2_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX2_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA2_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX2_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX2_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA2_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX2_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX2_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX2_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX2_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX2_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA2_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX2_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX2_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX2_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA2_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX2_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA2_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX2_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-1 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-1" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD02C" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA1_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX1_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX1_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA1_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX1_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX1_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA1_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX1_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX1_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX1_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX1_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX1_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX1_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX1_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX1_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX1_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX1_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA1_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX1_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA1_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX1_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA1_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX1_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA1_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX1_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA1_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX1_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX1_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA1_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX1_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX1_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA1_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX1_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX1_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX1_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX1_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX1_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA1_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX1_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX1_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX1_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA1_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX1_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA1_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX1_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+<window name="DMAFlex Ch-0 Registers" menu="&amp;Register:&amp;Peripherals:DMAFlex:DMAFlex Channel-0" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD02B" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_DMA_CONTROL_REGISTER_LIST.html">
+	<register name="High" type="NODATA" x="28" y="0"/>
+	<register name="Low" type="NODATA" x="36" y="0"/>
+	<register name="DMA0_NEXT_DESC_PTR" type="NODATA" x="0" y="1"/>
+	<register name="DMAFLX0_NxtDscPNTRHigh" type="NOLABEL" x="28" y="1"/>
+	<register name="DMAFLX0_NxtDscPNTRLow" type="NOLABEL" x="36" y="1"/>
+	<register name="DMA0_START_ADDR" type="NODATA" x="0" y="2"/>
+	<register name="DMAFLX0_BaseAddrHigh" type="NOLABEL" x="28" y="2"/>
+	<register name="DMAFLX0_BaseAddrLow" type="NOLABEL" x="36" y="2"/>
+	<register name="DMA0_CONFIG" type="NODATA" x="0" y="4"/>
+	<register name="DMAFLX0_DMACNFG" type="NOLABEL" x="32" y="4"/>
+	<register name="DMA Channel Enable" type="NODATA" x="2" y="5"/>
+	<register name="DMAFLX0_DMACNFG_En" type="NOLABEL" x="32" y="5"/>
+	<register name="DMA Direction" type="NODATA" x="2" y="6"/>
+	<register name="DMAFLX0_DMACNFG_Dir" type="NOLABEL" x="32" y="6"/>
+	<register name="Transfer Word Size" type="NODATA" x="2" y="7"/>
+	<register name="DMAFLX0_DMACNFG_WSize" type="NOLABEL" x="32" y="7"/>
+	<register name="DMA 2D Mode" type="NODATA" x="2" y="8"/>
+	<register name="DMAFLX0_DMACNFG_2DMode" type="NOLABEL" x="32" y="8"/>
+	<register name="DMA Buffer Clear (Restart)" type="NODATA" x="2" y="9"/>
+	<register name="DMAFLX0_DMACNFG_Rstrt" type="NOLABEL" x="32" y="9"/>
+	<register name="Data Interrupt Timing Select" type="NODATA" x="2" y="10"/>
+	<register name="DMAFLX0_DMACNFG_2DIntSel" type="NOLABEL" x="32" y="10"/>
+	<register name="Data Interrupt Enable" type="NODATA" x="2" y="11"/>
+	<register name="DMAFLX0_DMACNFG_EnInt" type="NOLABEL" x="32" y="11"/>
+	<register name="Flex Descriptor Size" type="NODATA" x="2" y="12"/>
+	<register name="DMAFLX0_DMACNFG_NDSize" type="NOLABEL" x="32" y="12"/>
+	<register name="Next Operation (Flow)" type="NODATA" x="2" y="13"/>
+	<register name="DMAFLX0_DMACNFG_Flow" type="NOLABEL" x="32" y="13"/>
+	<register name="DMA0_X_COUNT" type="NODATA" x="0" y="15"/>
+	<register name="DMAFLX0_XCOUNT" type="NOLABEL" x="32" y="15"/>
+	<register name="DMA0_X_MODIFY" type="NODATA" x="0" y="16"/>
+	<register name="DMAFLX0_XMODIFY" type="NOLABEL" x="32" y="16"/>
+	<register name="DMA0_Y_COUNT" type="NODATA" x="0" y="17"/>
+	<register name="DMAFLX0_YCOUNT" type="NOLABEL" x="32" y="17"/>
+	<register name="DMA0_Y_MODIFY" type="NODATA" x="0" y="18"/>
+	<register name="DMAFLX0_YMODIFY" type="NOLABEL" x="32" y="18"/>
+	<register name="High" type="NODATA" x="28" y="20"/>
+	<register name="Low" type="NODATA" x="36" y="20"/>
+	<register name="DMA0_CURR_DESC_PTR" type="NODATA" x="0" y="21"/>
+	<register name="DMAFLX0_CURDESCHIGH" type="NOLABEL" x="28" y="21"/>
+	<register name="DMAFLX0_CURDESCLOW" type="NOLABEL" x="36" y="21"/>
+	<register name="DMA0_CURR_ADDR" type="NODATA" x="0" y="22"/>
+	<register name="DMAFLX0_CURADDRHIGH" type="NOLABEL" x="28" y="22"/>
+	<register name="DMAFLX0_CURADDRLOW" type="NOLABEL" x="36" y="22"/>
+	<register name="DMA0_IRQ_STATUS" type="NODATA" x="0" y="24"/>
+	<register name="DMAFLX0_IRQSTAT" type="NOLABEL" x="32" y="24"/>
+	<register name="DMA Completion Status" type="NODATA" x="2" y="25"/>
+	<register name="DMAFLX0_IRQSTAT_Done" type="NOLABEL" x="32" y="25"/>
+	<register name="DMA Error Status" type="NODATA" x="2" y="26"/>
+	<register name="DMAFLX0_IRQSTAT_ERR" type="NOLABEL" x="32" y="26"/>
+	<register name="DMA Descriptor Fetch" type="NODATA" x="2" y="27"/>
+	<register name="DMAFLX0_IRQSTAT_DscFetch" type="NOLABEL" x="32" y="27"/>
+	<register name="DMA Channel Running" type="NODATA" x="2" y="28"/>
+	<register name="DMAFLX0_IRQSTAT_Run" type="NOLABEL" x="32" y="28"/>
+	<register name="DMA0_PERIPHERAL_MAP" type="NODATA" x="0" y="30"/>
+	<register name="DMAFLX0_PMAP" type="NOLABEL" x="32" y="30"/>
+	<register name="Channel Type" type="NODATA" x="2" y="31"/>
+	<register name="DMAFLX0_PMAP_CTYPE" type="NOLABEL" x="32" y="31"/>
+	<register name="Peripheral Mapped to Channel" type="NODATA" x="2" y="32"/>
+	<register name="DMAFLX0_PMAP_PMAP" type="NOLABEL" x="32" y="32"/>
+	<register name="DMA0_CURR_X_COUNT" type="NODATA" x="0" y="34"/>
+	<register name="DMAFLX0_CURXCOUNT" type="NOLABEL" x="32" y="34"/>
+	<register name="DMA0_CURR_Y_COUNT" type="NODATA" x="0" y="35"/>
+	<register name="DMAFLX0_CURYCOUNT" type="NOLABEL" x="32" y="35"/>
+</window>
+
+<!-- ******************    Begin Emulator Register Windows ****************** -->
+
+<window name="Product Identification Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Product ID" description="" format="Hexadecimal" format-selection="All" help-id="0x001E" help-tag="DSP_ID_Register_Window.htm">
+	<register name="DSPID" type="NORMAL" x="15" y="0"/>
+	<register name="CHIPID" type="NORMAL" x="15" y="1"/>
+</window>
+
+<window name="Trace Unit Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Trace Unit" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD041" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_TRACE_UNIT_REGISTER_LIST.html">
+	<register name="TBUFCTL"  type="NORMAL" x="15" y="0"/>
+	<register name="TBUFSTAT" type="NORMAL" x="15" y="1"/>
+</window>
+
+<window name="Watchpoint and Patch Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Watchpoint and Patch" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD045" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_WATCHPOINT_PATCH_REGISTER_LIST.html">
+	<register name="WPIACTL"  type="NORMAL" x="15" y="0"/>
+	<register name="WPIA0"    type="NORMAL" x="15" y="1"/>
+	<register name="WPIA1"    type="NORMAL" x="15" y="2"/>
+	<register name="WPIA2"    type="NORMAL" x="15" y="3"/>
+	<register name="WPIA3"    type="NORMAL" x="15" y="4"/>
+	<register name="WPIA4"    type="NORMAL" x="15" y="5"/>
+	<register name="WPIA5"    type="NORMAL" x="15" y="6"/>
+	<register name="WPIACNT0" type="NORMAL" x="15" y="7"/>
+	<register name="WPIACNT1" type="NORMAL" x="15" y="8"/>
+	<register name="WPIACNT2" type="NORMAL" x="15" y="9"/>
+	<register name="WPIACNT3" type="NORMAL" x="15" y="10"/>
+	<register name="WPIACNT4" type="NORMAL" x="15" y="11"/>
+	<register name="WPIACNT5" type="NORMAL" x="15" y="12"/>
+	<register name="WPDACTL"  type="NORMAL" x="15" y="13"/>
+	<register name="WPDA0"    type="NORMAL" x="15" y="14"/>
+	<register name="WPDA1"    type="NORMAL" x="15" y="15"/>
+	<register name="WPDACNT0" type="NORMAL" x="15" y="16"/>
+	<register name="WPDACNT1" type="NORMAL" x="15" y="17"/>
+	<register name="WPSTAT"   type="NORMAL" x="15" y="18"/>
+</window>
+
+<window name="Performance Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Performance Monitor" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD040" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_PERFORMANCE_MONITOR_REGISTER_LIST.html">
+	<register name="PFCTL"   type="NORMAL" x="15" y="0"/>
+	<register name="PFCNTR0"   type="NORMAL" x="15" y="1"/>
+	<register name="PFCNTR1"   type="NORMAL" x="15" y="2"/>
+</window>
+
+<window name="Watchdog Timer Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Watchdog Timer" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD026" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_WATCHDOG_TIMER_REGISTER_LIST.html">
+	<register name="WDOG_CTL"     type="NORMAL" x="15" y="0"/>
+	<register name="WDOG_CNT"     type="NORMAL" x="15" y="1"/>
+	<register name="WDOG_STAT"    type="NORMAL" x="15" y="2"/>
+</window>
+
+<window name="Real-Time Clock Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Real-Time Clock" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD024" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_REALTIME_CLOCK_REGISTER_LIST.html">
+	<register name="RTC_STAT"     type="NORMAL" x="15" y="0"/>
+	<register name="RTC_ICTL"     type="NORMAL" x="15" y="1"/>
+	<register name="RTC_ISTAT"    type="NORMAL" x="15" y="2"/>
+	<register name="RTC_SWCNT"    type="NORMAL" x="15" y="3"/>
+	<register name="RTC_ALARM"    type="NORMAL" x="15" y="4"/>
+	<register name="RTC_PREN"     type="NORMAL" x="15" y="5"/>
+</window>
+
+<window name="SPI Controller Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: SPI Controller" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD049" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_SPI_CONTROLLER_REGISTER_LIST.html">
+	<register name="SPI_CTL"      type="NORMAL" x="15" y="0"/>
+	<register name="SPI_FLG"      type="NORMAL" x="15" y="1"/>
+	<register name="SPI_STAT"     type="NORMAL" x="15" y="2"/>
+	<register name="SPI_TDBR"     type="NORMAL" x="15" y="3"/>
+	<register name="SPI_RDBR"     type="NORMAL" x="15" y="4"/>
+	<register name="SPI_BAUD"     type="NORMAL" x="15" y="5"/>
+	<register name="SPI_SHADOW"   type="NORMAL" x="15" y="6"/>
+</window>
+
+<window name="Programmable Flag Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: Programmable Flags" description="" format="Hexadecimal" format-selection="All" type="EMU" help-id="0xD04D" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_PROGRAMMABLE_FLAG_REGISTER_LIST.html">
+	<register name="FIO_FLAG_D" type="NORMAL" x="15" y="0"/>
+	<register name="FIO_FLAG_C" type="NORMAL" x="15" y="1"/>
+	<register name="FIO_FLAG_S" type="NORMAL" x="15" y="2"/>
+	<register name="FIO_FLAG_T" type="NORMAL" x="15" y="3"/>
+
+	<register name="FIO_MASKA_D" type="NORMAL" x="15" y="4"/>
+	<register name="FIO_MASKA_C" type="NORMAL" x="15" y="5"/>
+	<register name="FIO_MASKA_S" type="NORMAL" x="15" y="6"/>
+	<register name="FIO_MASKA_T" type="NORMAL" x="15" y="7"/>
+
+	<register name="FIO_MASKB_D" type="NORMAL" x="32" y="0"/>
+	<register name="FIO_MASKB_C" type="NORMAL" x="32" y="1"/>
+	<register name="FIO_MASKB_S" type="NORMAL" x="32" y="2"/>
+	<register name="FIO_MASKB_T" type="NORMAL" x="32" y="3"/>
+
+	<register name="FIO_DIR"     type="NORMAL" x="32" y="4"/>
+	<register name="FIO_POLAR"   type="NORMAL" x="32" y="5"/>
+	<register name="FIO_EDGE"    type="NORMAL" x="32" y="6"/>
+	<register name="FIO_BOTH"    type="NORMAL" x="32" y="7"/>
+	<register name="FIO_INEN"    type="NORMAL" x="32" y="8"/>
+</window>
+
+<window name="External Bus Interface Unit Registers" menu="&amp;Register:&amp;ADSP-BF533 Extended Regs: External Bus Interface Unit" description="" format="Hexadecimal" format-selection="All" type="SIM EMU" help-id="0xD04E" help-tag="\BF533-HWR.chm::/FILE_H_IDH_BF53X_EXTERNALBUS_INTERFACEUNIT_REGISTER_LIST.html">
+	<register name="Asynchronous Memory Global Control Register" type="NODATA" x="1" y="0"/>
+	<register name="EBIU_AMGCTL"  type="NODATA" x="1" y="1"/>
+	<register name="EBIU_AMGCTL"  type="NOLABEL" x="15" y="1"/>
+	<register name="AMCKEN Enable CLKOUT" type="NODATA" x="3" y="2"/>
+	<register name="AMCKEN" type="NOLABEL" x="48" y="2"/>
+	<register name="AMBEN  Enable Asynchronous Memory Banks" type="NODATA" x="3" y="3"/>
+	<register name="AMBEN" type="NOLABEL" x="48" y="3"/>
+	<register name="CDPRIO Core/DMA Priority" type="NODATA" x="3" y="4"/>
+	<register name="CDPRIO" type="NOLABEL" x="48" y="4"/>
+	<register name="Asynchronous Memory Bank Control 0 Register" type="NODATA" x="1" y="6"/>
+	<register name="EBIU_AMBCTL0" type="NODATA" x="1" y="7"/>
+	<register name="EBIU_AMBCTL0" type="NOLABEL" x="15" y="7"/>
+	<register name="B0RDYEN  Bank 0 ARDY Enable" type="NODATA" x="3" y="8"/>
+	<register name="B0RDYEN" type="NOLABEL" x="48" y="8"/>
+	<register name="B0RDYPOL Bank 0 ARDY Polarity" type="NODATA" x="3" y="9"/>
+	<register name="B0RDYPOL" type="NOLABEL" x="48" y="9"/>
+	<register name="B0TT     Bank 0 Memory Transition Time" type="NODATA" x="3" y="10"/>
+	<register name="B0TT" type="NOLABEL" x="48" y="10"/>
+	<register name="B0ST     Bank 0 Setup Time" type="NODATA" x="3" y="11"/>
+	<register name="B0ST" type="NOLABEL" x="48" y="11"/>
+	<register name="B0HT     Bank 0 Hold Time" type="NODATA" x="3" y="12"/>
+	<register name="B0HT" type="NOLABEL" x="48" y="12"/>
+	<register name="B0RAT    Bank 0 Read Access Time" type="NODATA" x="3" y="13"/>
+	<register name="B0RAT" type="NOLABEL" x="48" y="13"/>
+	<register name="B0WAT    Bank 0 Write Access Time" type="NODATA" x="3" y="14"/>
+	<register name="B0WAT" type="NOLABEL" x="48" y="14"/>
+	<register name="B1RDYEN  Bank 1 ARDY Enable" type="NODATA" x="3" y="15"/>
+	<register name="B1RDYEN" type="NOLABEL" x="48" y="15"/>
+	<register name="B1RDYPOL Bank 1 ARDY Polarity" type="NODATA" x="3" y="16"/>
+	<register name="B1RDYPOL" type="NOLABEL" x="48" y="16"/>
+	<register name="B1TT     Bank 1 Memory Transition Time" type="NODATA" x="3" y="17"/>
+	<register name="B1TT" type="NOLABEL" x="48" y="17"/>
+	<register name="B1ST     Bank 1 Setup Time" type="NODATA" x="3" y="18"/>
+	<register name="B1ST" type="NOLABEL" x="48" y="18"/>
+	<register name="B1HT     Bank 1 Hold Time" type="NODATA" x="3" y="19"/>
+	<register name="B1HT" type="NOLABEL" x="48" y="19"/>
+	<register name="B1RAT    Bank 1 Read Access Time" type="NODATA" x="3" y="20"/>
+	<register name="B1RAT" type="NOLABEL" x="48" y="20"/>
+	<register name="B1WAT    Bank 1 Write Access Time" type="NODATA" x="3" y="21"/>
+	<register name="B1WAT" type="NOLABEL" x="48" y="21"/>
+	<register name="Asynchronous Memory Bank Control 1 Register" type="NODATA" x="1" y="23"/>
+	<register name="EBIU_AMBCTL1" type="NODATA" x="1" y="24"/>
+	<register name="EBIU_AMBCTL1" type="NOLABEL" x="15" y="24"/>
+	<register name="B2RDYEN  Bank 2 ARDY Enable" type="NODATA" x="3" y="25"/>
+	<register name="B2RDYEN" type="NOLABEL" x="48" y="25"/>
+	<register name="B2RDYPOL Bank 2 ARDY Polarity" type="NODATA" x="3" y="26"/>
+	<register name="B2RDYPOL" type="NOLABEL" x="48" y="26"/>
+	<register name="B2TT     Bank 2 Memory Transition Time" type="NODATA" x="3" y="27"/>
+	<register name="B2TT" type="NOLABEL" x="48" y="27"/>
+	<register name="B2ST     Bank 2 Setup Time" type="NODATA" x="3" y="28"/>
+	<register name="B2ST" type="NOLABEL" x="48" y="28"/>
+	<register name="B2HT     Bank 2 Hold Time" type="NODATA" x="3" y="29"/>
+	<register name="B2HT" type="NOLABEL" x="48" y="29"/>
+	<register name="B2RAT    Bank 2 Read Access Time" type="NODATA" x="3" y="30"/>
+	<register name="B2RAT" type="NOLABEL" x="48" y="30"/>
+	<register name="B2WAT    Bank 2 Write Access Time" type="NODATA" x="3" y="31"/>
+	<register name="B2WAT" type="NOLABEL" x="48" y="31"/>
+	<register name="B3RDYEN  Bank 3 ARDY Enable" type="NODATA" x="3" y="32"/>
+	<register name="B3RDYEN" type="NOLABEL" x="48" y="32"/>
+	<register name="B3RDYPOL Bank 3 ARDY Polarity" type="NODATA" x="3" y="33"/>
+	<register name="B3RDYPOL" type="NOLABEL" x="48" y="33"/>
+	<register name="B3TT     Bank 3 Memory Transition Time" type="NODATA" x="3" y="34"/>
+	<register name="B3TT" type="NOLABEL" x="48" y="34"/>
+	<register name="B3ST     Bank 3 Setup Time" type="NODATA" x="3" y="35"/>
+	<register name="B3ST" type="NOLABEL" x="48" y="35"/>
+	<register name="B3HT     Bank 3 Hold Time" type="NODATA" x="3" y="36"/>
+	<register name="B3HT" type="NOLABEL" x="48" y="36"/>
+	<register name="B3RAT    Bank 3 Read Access Time" type="NODATA" x="3" y="37"/>
+	<register name="B3RAT" type="NOLABEL" x="48" y="37"/>
+	<register name="B3WAT    Bank 3 Write Access Time" type="NODATA" x="3" y="38"/>
+	<register name="B3WAT" type="NOLABEL" x="48" y="38"/>
+	<register name="SDRAM Memory Global Control Register"  type="NODATA" x="1" y="40"/>
+	<register name="EBIU_SDGCTL"  type="NODATA" x="1" y="41"/>
+	<register name="EBIU_SDGCTL"  type="NOLABEL" x="15" y="41"/>
+	<register name="SCTLE  SDRAM Clock Enable" type="NODATA" x="3" y="42"/>
+	<register name="SCTLE" type="NOLABEL" x="48" y="42"/>
+	<register name="CL     CAS Latency" type="NODATA" x="3" y="43"/>
+	<register name="CL" type="NOLABEL" x="48" y="43"/>
+	<register name="PASR   Partial Array Self-Refresh" type="NODATA" x="3" y="44"/>
+	<register name="PASR" type="NOLABEL" x="48" y="44"/>
+	<register name="TRAS   Bank Activate Command Delay" type="NODATA" x="3" y="45"/>
+	<register name="TRAS" type="NOLABEL" x="48" y="45"/>
+	<register name="TRP    Precharge Delay" type="NODATA" x="3" y="46"/>
+	<register name="TRP" type="NOLABEL" x="48" y="46"/>
+	<register name="TRCD   Bank Activate Delay" type="NODATA" x="3" y="47"/>
+	<register name="TRCD" type="NOLABEL" x="48" y="47"/>
+	<register name="TWR    Write Command Delay" type="NODATA" x="3" y="48"/>
+	<register name="TWR" type="NOLABEL" x="48" y="48"/>
+	<register name="PUPSD  Powerup Start Delay" type="NODATA" x="3" y="49"/>
+	<register name="PUPSD" type="NOLABEL" x="48" y="49"/>
+	<register name="PSM    Powerup Sequence" type="NODATA" x="3" y="50"/>
+	<register name="PSM" type="NOLABEL" x="48" y="50"/>
+	<register name="PSSE   Powerup Sequence Start Enable" type="NODATA" x="3" y="51"/>
+	<register name="PSSE" type="NOLABEL" x="48" y="51"/>
+	<register name="SRSF   Self-Refresh Enable" type="NODATA" x="3" y="52"/>
+	<register name="SRSF" type="NOLABEL" x="48" y="52"/>
+	<register name="EBUFE  Timing for External Buffering" type="NODATA" x="3" y="53"/>
+	<register name="EBUFE" type="NOLABEL" x="48" y="53"/>
+	<register name="FBBRW  Fast Back-to-Back Read-to-Write" type="NODATA" x="3" y="54"/>
+	<register name="FBBRW" type="NOLABEL" x="48" y="54"/>
+	<register name="EMREN  Extended Mode Register Enable" type="NODATA" x="3" y="55"/>
+	<register name="EMREN" type="NOLABEL" x="48" y="55"/>
+	<register name="TCSR   Temperature Compensated Self-Refresh" type="NODATA" x="3" y="56"/>
+	<register name="TCSR" type="NOLABEL" x="48" y="56"/>
+	<register name="CDDBG  Control Disable During Bus Grant" type="NODATA" x="3" y="57"/>
+	<register name="CDDBG" type="NOLABEL" x="48" y="57"/>
+	<register name="SDRAM Memory Bank Control Register" type="NODATA" x="1" y="59"/>
+	<register name="EBIU_SDBCTL" type="NODATA" x="1" y="60"/>
+	<register name="EBIU_SDBCTL" type="NOLABEL" x="15" y="60"/>
+	<register name="EBE    External Bank Enable" type="NODATA" x="3" y="61"/>
+	<register name="EBE" type="NOLABEL" x="48" y="61"/>
+	<register name="EBSZ   External Bank Size" type="NODATA" x="3" y="62"/>
+	<register name="EBSZ" type="NOLABEL" x="48" y="62"/>
+	<register name="EBCAW  External Bank Column Address Width" type="NODATA" x="3" y="63"/>
+	<register name="EBCAW" type="NOLABEL" x="48" y="63"/>
+	<register name="SDRAM Refresh Rate Control Register" type="NODATA" x="1" y="65"/>
+	<register name="EBIU_SDRRC" type="NODATA" x="1" y="66"/>
+	<register name="EBIU_SDRRC" type="NOLABEL" x="15" y="66"/>
+	<register name="SDRAM Control Status Register" type="NODATA" x="1" y="68"/>
+	<register name="EBIU_SDSTAT" type="NODATA" x="1" y="69"/>
+	<register name="EBIU_SDSTAT" type="NOLABEL" x="15" y="69"/>
+	<register name="SDCI   SDRAM Controller Idle" type="NODATA" x="3" y="70"/>
+	<register name="SDCI" type="NOLABEL" x="48" y="70"/>
+	<register name="SDSRA  SDRAM Self Refresh Active" type="NODATA" x="3" y="71"/>
+	<register name="SDSRA" type="NOLABEL" x="48" y="71"/>
+	<register name="SDPUA  SDRAM Powerup Active" type="NODATA" x="3" y="72"/>
+	<register name="SDPUA" type="NOLABEL" x="48" y="72"/>
+	<register name="SDRS   " type="NODATA" x="3" y="73"/>
+	<register name="SDRS" type="NOLABEL" x="48" y="73"/>
+	<register name="SDEASE SDRAM EAB Sticky Error Status" type="NODATA" x="3" y="74"/>
+	<register name="SDEASE" type="NOLABEL" x="48" y="74"/>
+	<register name="BGSTAT Bus Grant Status" type="NODATA" x="3" y="75"/>
+	<register name="BGSTAT" type="NOLABEL" x="48" y="75"/>
+</window>
+
+</register-window-definitions>
+
+<!-- ************************************************************************ -->
+<!-- ******* Memory Window Definitions                                        -->
+<!-- ************************************************************************ -->
+
+<memory-window-definitions help-chm="\procfrio.chm::/html/">
+<window name="BLACKFIN Memory" menu="&amp;Memory:&amp;BLACKFIN Memory" address="0xFF804000" left="0" top="0" right="400" bottom="200" title="BLACKFIN Memory" track="" format="Hexadecimal" format-selection="All" help-id="0x15" help-tag="HID_FRIO_Memory.htm"/>
+</memory-window-definitions>
+
+<!-- ************************************************************************ -->
+<!-- ******* Memory Definitions                                               -->
+<!-- ************************************************************************ -->
+
+<memory-definitions>
+	<memory-segment start="0x00000000" end="0x07FFFFFF" width="8" type="PM RAM EXTERNAL"     name="BLACKFIN Memory" memory-id="0" description="External SDRAM Memory"/>
+	<memory-segment start="0x20000000" end="0x200FFFFF" width="8" type="PM RAM EXTERNAL"     name="BLACKFIN Memory" memory-id="0" description="External Async Bank0 Memory"/>
+	<memory-segment start="0x20100000" end="0x201FFFFF" width="8" type="PM RAM EXTERNAL"     name="BLACKFIN Memory" memory-id="0" description="External Async Bank1 Memory"/>
+	<memory-segment start="0x20200000" end="0x202FFFFF" width="8" type="PM RAM EXTERNAL"     name="BLACKFIN Memory" memory-id="0" description="External Async Bank2 Memory"/>
+	<memory-segment start="0x20300000" end="0x203FFFFF" width="8" type="PM RAM EXTERNAL"     name="BLACKFIN Memory" memory-id="0" description="External Async Bank0 Memory"/>
+	<memory-segment start="0xEF000000" end="0xEF0003FF" width="8" type="PM ROM INTERNAL" 	 name="BLACKFIN Memory" memory-id="0" description="Boot ROM"/>
+	<memory-segment start="0xFF800000" end="0xFF807FFF" width="8" type="DM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Data Bank A SRAM/Cache"/>
+	<memory-segment start="0xFF900000" end="0xFF907FFF" width="8" type="DM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Data Bank B SRAM/Cache"/>
+	<memory-segment start="0xFFA00000" end="0xFFA07FFF" width="8" type="PM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Instruction RAM (L1)"/>
+	<memory-segment start="0xFFA08000" end="0xFFA0BFFF" width="8" type="PM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Instruction RAM (L1)"/>
+	<memory-segment start="0xFFA0C000" end="0xFFA0FFFF" width="8" type="PM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Instruction RAM (L1)"/>
+	<memory-segment start="0xFFA10000" end="0xFFA13FFF" width="8" type="PM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Instruction RAM/Cache (L1)"/>
+	<memory-segment start="0xFFB00000" end="0xFFB00FFF" width="8" type="PM RAM INTERNAL"     name="BLACKFIN Memory" memory-id="0" description="Scratch pad SRAM"/>
+	<memory-segment start="0xFFC00000" end="0xFFFFFFFF" width="8" type="DM RAM INTERNAL MMR" name="BLACKFIN Memory" memory-id="0" description="MMR registers"/>
+</memory-definitions>
+
+	<!-- *********************************************** -->
+	<!-- Register resets used by emulator                -->
+	<!-- *********************************************** -->
+<register-reset-definitions>
+
+<!--	<register name="EBIU_SDRRC" reset-value="0x01A0" core="Common" /> -->
+	
+	<!-- For BF533 EZ-Kit Lite's rev 1.7 and above use 0x25 -->
+        <!-- <register name="EBIU_SDBCTL" reset-value="0x25" core="Common" /-->
+	
+	<!-- For BF533 EZ-Kit Lite's rev 1.6 and below use 0x13 -->
+	
+	<!-- register name="EBIU_SDGCTL" reset-value="0x0091998D" core="Common" / -->
+
+
+	<!-- KOBANZAME setting -->
+	<register name="EBIU_SDRRC" reset-value="0x268" core="Common" /> 
+    <register name="EBIU_SDBCTL" reset-value="0x13" core="Common" />
+	<register name="EBIU_SDGCTL" reset-value="0x0191998D" core="Common" />
+	
+</register-reset-definitions>
+
+	<!-- **************************************************************** -->
+	<!-- **** Beginning at VisualDSP++ 5.0, a Custom Board Support File   -->
+	<!-- **** feature was introduced. Do not edit this file directly.     -->
+	<!-- **** See online help for creating a custom board XML file and    -->
+	<!-- **** for setting the Custom Board File active for your debugging -->
+	<!-- **** session. Your custom board file will have only the          -->
+	<!-- **** incremental changes needed, not a full definition.          -->
+	<!-- **************************************************************** -->
+
+</visualdsp-proc-xml>

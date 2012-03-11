@@ -1,0 +1,23 @@
+このディレクトリは、TOPPERS/JSP 1.4.3をベースにBlackfin対応を追加した
+ものである。Blackfin実装に明らかに不要なディレクトリは削除している。例を
+上げるとH8プロセッサ依存部およびそのツール等を削除している。
+
+Blackfinプロセサに対応するために以下のディレクトリ及びファイルが追加され
+ている。
+
+jsp/config/blackfin/
+jsp/utils/blackfin-vdsp/
+jsp/tools/blackfin-vdsp/
+jsp/pdic/simple_sio/uart.c
+jsp/pdic/simple_sio/uart.h
+
+また、以下のファイルにはBlackfinプロセッサ対応のための宣言を追加している。
+
+jsp/sample/sample1.h
+jsp/sample/Makefile
+
+このディレクトリの最新版およびドキュメントはTOPPERS/JSP for Blackfin
+プロジェクトよりダウンロードできる。
+
+http://sourceforge.jp/projects/toppersjsp4bf/
+

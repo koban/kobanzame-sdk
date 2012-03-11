@@ -1,0 +1,1 @@
+export PATH=$PATH:/opt/uClinux/bfin-uclinux/bin:/opt/uClinux/bfin-linux-uclibc/bin:/opt/uClinux/bfin-elf/bin

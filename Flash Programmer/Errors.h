@@ -1,0 +1,21 @@
+#ifndef __ERRORS_H__
+#define __ERRORS_H__
+
+// enum of possible errors
+typedef enum
+{
+	NO_ERR,
+	POLL_TIMEOUT,
+	VERIFY_WRITE,
+	INVALID_SECTOR,
+	INVALID_BLOCK,
+	UNKNOWN_COMMAND,
+	PROCESS_COMMAND_ERR,
+	NOT_READ_ERROR,
+	DRV_NOTAT_BREAK,
+	BUFFER_IS_NULL,
+	NUM_ERROR_CODES,
+}ERROR_CODE;
+
+#endif // __ERRORS_H__
+

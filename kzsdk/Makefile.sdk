@@ -1,0 +1,25 @@
+# *	@file	Makefile.sdk
+# *	@brief	KOBANZAME SDK Makefile
+# *
+# *	KOBANZAME SDK
+# *		Software Developers Kit for Blackfin DSP Evaluation Board(KOBANZAME).
+# *		
+# *	Copyright (C) 2010, KOBANZAME SDK Project, all right reserved
+# *
+# *	LICENSE:
+# *	The software is a free and you can use and redistribute it for
+# *	personal, non-profit or commercial products. Redistributions of
+# *	source code must retain the above copyright notice. There is no 
+# *	warranty in this software, if you suffer any damages by using 
+# *	the software.
+
+KZSDK_COBJS = fs_cmd.o fs_support.o kz_malloc.o kzdev.o kzdev_audio.o kzdev_codec.o kzdev_mems.o kzdev_mmc.o kzdev_spi.o kzstdio.o serial_io.o cmdline.o
+KZSDK_ASMOBJS =
+
+KERNEL_COBJS := $(KZSDK_COBJS) $(KERNEL_COBJS)
+KERNEL_ASMOBJS := $(KZSDK_ASMOBJS) $(KERNEL_ASMOBJS)
+
+CDEFS := -DTARGET_TOOL=0 $(CDEFS)
+INCLUDES := -I$(KZSDK) $(INCLUDES)
+vpath %.c $(KZSDK_DIR)
+vpath %.S $(KZSDK_DIR)

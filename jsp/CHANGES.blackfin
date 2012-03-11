@@ -1,0 +1,31 @@
+*2009/Aug/16 Release 3.1.1
+
+以下のチケットへの対策を行った。なお、チケットおよびその対策の詳細は以下のURLを参照
+http://sourceforge.jp/projects/toppersjsp4bf/ticket/
+
+-チケット #18168 debug_bootは標準で呼ばないようにすべき
+
+*2009/Jul/25 Release 3.1.0
+
+以下のチケットへの対策を行った。なお、チケットおよびその対策の詳細は以下のURLを参照
+http://sourceforge.jp/projects/toppersjsp4bf/ticket/
+
+-チケット #17551 E!Kit BF533への対応
+-チケット #17210 g++ 4.3でコンフィグレータをビルド出来ない
+-チケット #17065 BF537でvxget_timが正常動作しない
+-チケット #17557 コールド・ブート時に再起動する
+-チケット #17559 start.Sのインクルードファイル名が違う
+-チケット #17560 gdbで使えるレジスタ定義がほしい
+-チケット #17761 def_xxxx.hを排除する
+
+*2009/May/30 Release 3.0.1
+
+以下のチケットへの対策を行った。なお、チケットおよびその対策の詳細は以下のURLを参照
+http://sourceforge.jp/projects/toppersjsp4bf/ticket/
+
+-チケット #15329 コアタイマーのハンドラ名
+-チケット #16716 sample1.hのSTACK_SIZEが小さすぎる
+-チケット #16820 コアタイマーは廃止の方向
+-チケット #16810 hw_timer_initialize()が、冗長なIMASK操作をしている
+-チケット #16714 多重割り込み時にIMASKを変更すると、間違ったハンドラが呼ばれる
+-チケット #16729 dis_int()が排他制御されていない

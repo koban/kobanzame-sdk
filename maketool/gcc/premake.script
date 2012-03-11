@@ -1,0 +1,7 @@
+chmod a+x ../../jsp/utils/gencheck
+chmod a+x ../../jsp/utils/genoffset
+chmod a+x ../../jsp/utils/genrename
+chmod a+x ../../jsp/utils/makedep
+chmod a+x ../../jsp/utils/rename
+
+find ../../. -type f -exec nkf -w -Lu --overwrite {} \;

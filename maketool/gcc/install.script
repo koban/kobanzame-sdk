@@ -1,0 +1,17 @@
+#! /bin/sh
+wget http://blackfin.uclinux.org/gf/download/frsrelease/392/5087/blackfin-toolchain-08r1.5-14.i386.tar.bz2
+wget http://blackfin.uclinux.org/gf/download/frsrelease/392/5080/blackfin-toolchain-elf-gcc-4.1-08r1.5-14.i386.tar.bz2
+wget http://blackfin.uclinux.org/gf/download/frsrelease/392/5086/blackfin-toolchain-uclibc-full-08r1.5-14.i386.tar.bz2
+wget http://blackfin.uclinux.org/gf/download/frsrelease/392/5081/blackfin-jtag-tools-08r1.5-14.i386.tar.bz2
+tar -xvjf blackfin-toolchain-08r1.5-14.i386.tar.bz2
+tar -xvjf blackfin-toolchain-elf-gcc-4.1-08r1.5-14.i386.tar.bz2
+tar -xvjf blackfin-toolchain-uclibc-full-08r1.5-14.i386.tar.bz2
+tar -xvjf blackfin-jtag-tools-08r1.5-14.i386.tar.bz2
+sudo mv opt/uClinux/ /opt -f
+cat ~/.bashrc addbash.txt > tmp
+rm ~/.bashrc
+mv tmp ~/.bashrc
+
+sudo apt-get install nkf
+sudo apt-get install ckermit
+mv kermrc.txt ~/.kermrc

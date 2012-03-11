@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='ISO-8859-1'?>
+<visualdsp-project-group generated="Sat Jul 25 20:46:26 2009" version="1.0.0.0" active-project="talkthrough">
+	<project name="talkthrough" file=".\talkthrough.dpj">
+		<dependencies>
+			<dependent-project>libkernel</dependent-project>
+			<dependent-project>makeoffset</dependent-project>
+		</dependencies>
+	</project>
+	<project name="libkernel" file="..\..\..\config\blackfin\ezkit_bf533\jsp_ezkit_bf533.dpj">
+	</project>
+	<project name="makeoffset" file="..\..\..\utils\blackfin-vdsp\makeoffset.dpj">
+	</project>
+</visualdsp-project-group>

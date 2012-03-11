@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding='ISO-8859-1'?>
+<visualdsp-project-group generated="Sat Jul 25 16:55:40 2009" version="1.0.0.0" active-project="sample1_ezkit_bf537">
+	<project name="makeoffset" file="..\..\..\utils\blackfin-vdsp\makeoffset.dpj">
+	</project>
+	<project name="libkernel" file="..\..\..\config\blackfin\ezkit_bf537\jsp_ezkit_bf537.dpj">
+	</project>
+	<project name="sample1_ezkit_bf537" file=".\sample1.dpj">
+	</project>
+</visualdsp-project-group>

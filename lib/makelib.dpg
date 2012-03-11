@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='ISO-8859-1'?>
+<visualdsp-project-group generated="Sun Feb 21 23:13:35 2010" version="1.0.0.0" active-project="kzsdk">
+	<project name="makeoffset" file="..\jsp\utils\blackfin-vdsp\makeoffset.dpj">
+	</project>
+	<project name="libkernel" file="..\jsp\config\blackfin\kobanzame\jsp_kobanzame.dpj">
+	</project>
+	<project name="fatfs" file="..\fatfs\fatfs.dpj">
+	</project>
+	<project name="kzsdk" file="..\kzsdk\kzsdk.dpj">
+	</project>
+</visualdsp-project-group>

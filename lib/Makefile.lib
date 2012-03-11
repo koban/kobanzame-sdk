@@ -1,0 +1,24 @@
+# *	@file	Makefile.lib
+# *	@brief	KOBANZAME SDK Library Makefile
+# *
+# *	KOBANZAME SDK
+# *		Software Developers Kit for Blackfin DSP Evaluation Board(KOBANZAME).
+# *		
+# *	Copyright (C) 2010, KOBANZAME SDK Project, all right reserved
+# *
+# *	LICENSE:
+# *	The software is a free and you can use and redistribute it for
+# *	personal, non-profit or commercial products. Redistributions of
+# *	source code must retain the above copyright notice. There is no 
+# *	warranty in this software, if you suffer any damages by using 
+# *	the software.
+
+KZLIB_COBJS = kzlib.o
+KZLIB_ASMOBJS =
+
+KERNEL_COBJS := $(KZLIB_COBJS) $(KERNEL_COBJS)
+KERNEL_ASMOBJS := $(KZLIB_ASMOBJS) $(KERNEL_ASMOBJS)
+
+INCLUDES := -I$(KZLIB) $(INCLUDES)
+vpath %.c $(KZLIB_DIR)
+vpath %.S $(KZLIB_DIR)
